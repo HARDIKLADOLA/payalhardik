@@ -1,0 +1,2736 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#FCF9F6" id="metaThemeColor" />
+<title>Monika &amp; Avadh — Wedding Cinema Series</title>
+
+<!-- Romantic Editorial Serif + Apple-Grade Sans Typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600&display=swap"
+rel="stylesheet"
+/>
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+fontFamily: {
+serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"Segoe UI"', 'sans-serif'],
+},
+},
+},
+};
+</script>
+
+<style>
+/* =========================================================================
+DESIGN TOKENS — Romantic Ivory Light Mode (Default) & Velvet Cinema Dark
+========================================================================= */
+:root {
+--bg-page: #FCF9F6;
+--bg-card: rgba(255, 255, 255, 0.85);
+--bg-card-hover: rgba(255, 255, 255, 0.96);
+--bg-nav: rgba(252, 249, 246, 0.78);
+--bg-pill: rgba(168, 130, 85, 0.08);
+--bg-pill-active: #1D1A18;
+--text-pill-active: #FCF9F6;
+--text-primary: #1F1B18;
+--text-secondary: #5E554F;
+--text-muted: #8C817A;
+--accent-gold: #A88255;
+--accent-rose: #C27684;
+--border-hairline: rgba(168, 130, 85, 0.16);
+--border-strong: rgba(168, 130, 85, 0.28);
+--shadow-card: 0 10px 35px -10px rgba(82, 58, 42, 0.09), 0 2px 8px rgba(82, 58, 42, 0.04);
+--shadow-card-hover: 0 22px 50px -12px rgba(82, 58, 42, 0.16), 0 4px 14px rgba(194, 118, 132, 0.10);
+--hero-aura: radial-gradient(ellipse 75% 55% at 50% 8%, rgba(232, 174, 185, 0.28), rgba(214, 180, 136, 0.16) 42%, transparent 74%);
+--btn-primary-bg: #1F1B18;
+--btn-primary-text: #FCF9F6;
+--btn-secondary-bg: rgba(255, 255, 255, 0.75);
+--btn-secondary-text: #1F1B18;
+}
+
+html.dark {
+--bg-page: #08070B;
+--bg-card: rgba(22, 19, 27, 0.82);
+--bg-card-hover: rgba(30, 26, 37, 0.92);
+--bg-nav: rgba(8, 7, 11, 0.76);
+--bg-pill: rgba(227, 188, 139, 0.09);
+--bg-pill-active: #F7F1EB;
+--text-pill-active: #0D0B11;
+--text-primary: #F7F2EE;
+--text-secondary: #BEB4AD;
+--text-muted: #8D837E;
+--accent-gold: #E3BC8B;
+--accent-rose: #E89AA8;
+--border-hairline: rgba(227, 188, 139, 0.14);
+--border-strong: rgba(227, 188, 139, 0.28);
+--shadow-card: 0 14px 40px -12px rgba(0, 0, 0, 0.65), 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+--shadow-card-hover: 0 26px 60px -12px rgba(0, 0, 0, 0.85), 0 0 28px rgba(232, 154, 168, 0.12);
+--hero-aura: radial-gradient(ellipse 70% 52% at 50% 6%, rgba(232, 154, 168, 0.16), rgba(227, 188, 139, 0.10) 44%, transparent 75%);
+--btn-primary-bg: #F7F2EE;
+--btn-primary-text: #0C0A10;
+--btn-secondary-bg: rgba(255, 255, 255, 0.07);
+--btn-secondary-text: #F7F2EE;
+}
+
+* {
+-webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+max-width: 100%;
+overflow-x: clip;
+background-color: var(--bg-page);
+color: var(--text-primary);
+font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+transition: background-color 0.45s cubic-bezier(0.22, 1, 0.36, 1), color 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+/* Ambient Hero Aura */
+.hero-ambient {
+background-image: var(--hero-aura);
+pointer-events: none;
+}
+
+/* Frosted Glass Surfaces */
+.glass-nav {
+background-color: var(--bg-nav);
+backdrop-filter: blur(22px) saturate(180%);
+-webkit-backdrop-filter: blur(22px) saturate(180%);
+border-bottom: 1px solid var(--border-hairline);
+}
+
+.glass-card {
+background-color: var(--bg-card);
+border: 1px solid var(--border-hairline);
+box-shadow: var(--shadow-card);
+backdrop-filter: blur(18px) saturate(150%);
+-webkit-backdrop-filter: blur(18px) saturate(150%);
+transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+box-shadow 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+border-color 0.35s ease,
+background-color 0.35s ease;
+}
+
+.film-card:hover {
+transform: translateY(-4px);
+background-color: var(--bg-card-hover);
+border-color: var(--border-strong);
+box-shadow: var(--shadow-card-hover);
+}
+
+.film-card:active {
+transform: scale(0.985);
+}
+
+.film-card .thumb-img {
+transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.film-card:hover .thumb-img {
+transform: scale(1.045);
+}
+
+/* Frosted Play Button Pulse */
+@keyframes softPulse {
+0%, 100% {
+box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.34), 0 12px 30px rgba(0, 0, 0, 0.32);
+}
+50% {
+box-shadow: 0 0 0 14px rgba(255, 255, 255, 0), 0 14px 36px rgba(0, 0, 0, 0.38);
+}
+}
+
+.hero-play-orb {
+animation: softPulse 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+backdrop-filter: blur(16px) saturate(180%);
+-webkit-backdrop-filter: blur(16px) saturate(180%);
+}
+
+/* Hide Horizontal Scrollbar on Mobile Filter Pills */
+.no-scrollbar::-webkit-scrollbar {
+display: none;
+}
+.no-scrollbar {
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
+
+/* Cinema & Lightbox Modal Animation */
+.cinema-backdrop {
+background: rgba(6, 5, 10, 0.92);
+backdrop-filter: blur(24px) saturate(150%);
+-webkit-backdrop-filter: blur(24px) saturate(150%);
+opacity: 0;
+visibility: hidden;
+transition: opacity 0.32s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.32s ease;
+}
+
+.cinema-backdrop.open {
+opacity: 1;
+visibility: visible;
+}
+
+.cinema-panel {
+transform: scale(0.95) translateY(14px);
+opacity: 0;
+transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.32s ease;
+}
+
+.cinema-backdrop.open .cinema-panel {
+transform: scale(1) translateY(0);
+opacity: 1;
+}
+
+/* Apple-Style Passcode Error Shake Animation */
+@keyframes passcodeShake {
+0%, 100% { transform: translateX(0); }
+18% { transform: translateX(-9px); }
+36% { transform: translateX(8px); }
+54% { transform: translateX(-6px); }
+72% { transform: translateX(5px); }
+88% { transform: translateX(-2px); }
+}
+
+.passcode-shake {
+animation: passcodeShake 0.42s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* Floating Rose & Gold Hearts Animation */
+@keyframes floatUpHeart {
+0% {
+transform: translate(-50%, 0) scale(0.65) rotate(0deg);
+opacity: 0;
+}
+15% {
+opacity: 0.95;
+}
+100% {
+transform: translate(calc(-50% + var(--drift, 0px)), -190px) scale(1.25) rotate(var(--rot, 12deg));
+opacity: 0;
+}
+}
+
+.floating-heart {
+position: fixed;
+pointer-events: none;
+z-index: 9999;
+font-size: 20px;
+will-change: transform, opacity;
+animation: floatUpHeart 1.85s cubic-bezier(0.2, 0.8, 0.3, 1) forwards;
+}
+
+/* iOS Toast Notification */
+.toast-pill {
+transform: translate(-50%, 20px) scale(0.96);
+opacity: 0;
+pointer-events: none;
+transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+}
+
+.toast-pill.show {
+transform: translate(-50%, 0) scale(1);
+opacity: 1;
+}
+
+/* Reveal Animation for Cards */
+@keyframes cardFadeIn {
+from {
+opacity: 0;
+transform: translateY(14px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.animate-card-in {
+animation: cardFadeIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Safe-area bottom padding for notched iOS devices */
+.safe-bottom {
+padding-bottom: max(2.5rem, env(safe-area-inset-bottom));
+}
+
+/* Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+*, *::before, *::after {
+animation-duration: 0.01ms !important;
+animation-iteration-count: 1 !important;
+transition-duration: 0.01ms !important;
+scroll-behavior: auto !important;
+}
+}
+</style>
+</head>
+
+<body class="min-h-screen antialiased selection:bg-[#C27684]/25">
+<!-- Ambient Romantic Aura Layer -->
+<div class="hero-ambient fixed inset-x-0 top-0 h-[580px] z-0" aria-hidden="true"></div>
+
+<!-- =========================================================================
+FROSTED STICKY NAVBAR (52px mobile / 56px desktop)
+========================================================================= -->
+<header class="glass-nav sticky top-0 z-40 w-full">
+<div class="mx-auto flex h-[52px] sm:h-[56px] max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+<!-- Brand Monogram + Title -->
+<a
+href="#top"
+class="group flex min-h-[44px] items-center gap-2.5 rounded-full pr-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-gold)]"
+>
+<span
+class="flex h-8 w-8 items-center justify-center rounded-full border text-xs font-serif italic font-semibold tracking-tight transition-transform duration-300 group-hover:scale-105"
+style="border-color: var(--border-strong); color: var(--accent-gold); background: var(--bg-pill);"
+>
+M&amp;A
+</span>
+<span class="font-serif text-[19px] sm:text-[21px] font-medium tracking-tight" style="color: var(--text-primary);">
+Monika <span class="italic" style="color: var(--accent-rose);">&amp;</span> Avadh
+</span>
+</a>
+
+<!-- Right Controls: Engagement Anchor + Send Love Pill + Light/Cinema Toggle -->
+<div class="flex items-center gap-2 sm:gap-2.5">
+<a
+href="#section-engagement-gallery"
+id="navGalleryLink"
+class="hidden md:inline-flex min-h-[36px] items-center gap-1.5 rounded-full border px-3.5 text-xs font-medium transition-all duration-200 hover:scale-[1.03] active:scale-95"
+style="border-color: var(--border-hairline); background: var(--bg-pill); color: var(--text-primary);"
+>
+<span>Engagement Gallery</span>
+</a>
+
+<button
+id="navLoveBtn"
+type="button"
+class="inline-flex min-h-[38px] sm:min-h-[36px] items-center gap-1.5 rounded-full border px-3 sm:px-3.5 text-xs font-medium transition-all duration-200 hover:scale-[1.03] active:scale-95"
+style="border-color: var(--border-hairline); background: var(--bg-pill); color: var(--text-primary);"
+aria-label="Send love and blessings"
+>
+<span class="text-[13px] leading-none" style="color: var(--accent-rose);">❤️</span>
+<span class="hidden sm:inline">Send Love</span>
+<span
+id="navLoveCount"
+class="tabular-nums font-semibold"
+style="color: var(--accent-gold);"
+>108</span>
+</button>
+
+<button
+id="themeToggleBtn"
+type="button"
+class="inline-flex min-h-[38px] sm:min-h-[36px] items-center gap-1.5 rounded-full border px-3 sm:px-3.5 text-xs font-medium transition-all duration-200 hover:scale-[1.03] active:scale-95"
+style="border-color: var(--border-hairline); background: var(--bg-card); color: var(--text-primary);"
+aria-label="Switch between Romantic Ivory Light Mode and Velvet Cinema Dark Mode"
+>
+<span id="themeIcon" class="text-[13px] leading-none" aria-hidden="true">🌙</span>
+<span id="themeLabel">Cinema</span>
+</button>
+</div>
+</div>
+</header>
+
+<!-- =========================================================================
+MAIN CONTENT
+========================================================================= -->
+<main id="top" class="relative z-10">
+
+<!-- =====================================================================
+HERO PREMIERE SECTION
+===================================================================== -->
+<section class="mx-auto max-w-5xl px-4 pt-9 pb-8 sm:px-6 sm:pt-14 sm:pb-12 lg:px-8">
+<!-- Centered Editorial Header -->
+<div class="mx-auto max-w-2xl text-center">
+<p
+class="mb-2.5 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.26em]"
+style="color: var(--accent-gold);"
+>
+The Wedding Film Anthology
+</p>
+
+<h1
+class="font-serif italic font-medium tracking-tight text-[46px] leading-[1.04] sm:text-[64px] lg:text-[74px]"
+style="color: var(--text-primary);"
+>
+Monika <span style="color: var(--accent-rose);">&amp;</span> Avadh
+</h1>
+
+<p
+class="mx-auto mt-3.5 max-w-lg text-[15px] sm:text-[17px] leading-relaxed"
+style="color: var(--text-secondary);"
+>
+Two hearts, one timeless story — captured forever in cinema.
+</p>
+
+<!-- Romantic Milestone Dates Plaque (Populated from CONFIG.COUPLE) -->
+<div class="mt-5 flex justify-center">
+<div
+class="glass-card inline-flex flex-wrap items-center justify-center gap-x-5 gap-y-2 rounded-2xl sm:rounded-full px-5 py-2.5 sm:px-7 sm:py-3"
+style="border-color: var(--border-strong);"
+aria-label="Engagement and Wedding Milestone Dates"
+>
+<div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-2 text-center">
+<span
+class="text-[10px] font-semibold uppercase tracking-[0.22em]"
+style="color: var(--accent-gold);"
+>
+Engagement
+</span>
+<span
+id="heroEngagementDate"
+class="font-serif text-[17px] sm:text-[19px] font-medium tracking-wide"
+style="color: var(--text-primary);"
+>
+19 MAY 2024
+</span>
+</div>
+
+<span
+class="hidden sm:inline-block text-xs select-none"
+style="color: var(--accent-rose);"
+aria-hidden="true"
+>
+✦
+</span>
+<span
+class="h-4 w-px sm:hidden"
+style="background: var(--border-strong);"
+aria-hidden="true"
+></span>
+
+<div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-2 text-center">
+<span
+class="text-[10px] font-semibold uppercase tracking-[0.22em]"
+style="color: var(--accent-gold);"
+>
+Wedding
+</span>
+<span
+id="heroWeddingDate"
+class="font-serif text-[17px] sm:text-[19px] font-medium tracking-wide"
+style="color: var(--text-primary);"
+>
+31 NOV 2024
+</span>
+</div>
+</div>
+</div>
+
+<!-- Primary Actions + Watched Progress -->
+<div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+<button
+id="heroWatchBtn"
+type="button"
+class="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-6 text-sm font-medium shadow-sm transition-all duration-200 hover:scale-[1.03] active:scale-95"
+style="background: var(--btn-primary-bg); color: var(--btn-primary-text);"
+>
+<svg class="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M8 5.14v14l11-7-11-7z" />
+</svg>
+<span>Watch Premiere</span>
+</button>
+
+<a
+href="#chapters-bar"
+class="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full border px-5 text-sm font-medium transition-all duration-200 hover:scale-[1.02] active:scale-95"
+style="border-color: var(--border-strong); background: var(--btn-secondary-bg); color: var(--btn-secondary-text);"
+>
+<span>Explore Chapters</span>
+<svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+</svg>
+</a>
+</div>
+
+<!-- Subtle Watched Progress Counter -->
+<div class="mt-4 flex flex-col items-center justify-center gap-2">
+<span
+id="watchedProgressBadge"
+class="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-medium"
+style="background: var(--bg-pill); color: var(--text-muted);"
+>
+<span class="h-1.5 w-1.5 rounded-full" style="background: var(--accent-rose);"></span>
+<span id="watchedProgressText">0 of 12 Chapters Watched</span>
+</span>
+<div
+class="h-1 w-40 overflow-hidden rounded-full"
+style="background: var(--bg-pill);"
+aria-hidden="true"
+>
+<div
+id="watchedProgressBar"
+class="h-full w-0 rounded-full transition-all duration-500"
+style="background: linear-gradient(90deg, var(--accent-rose), var(--accent-gold));"
+></div>
+</div>
+</div>
+</div>
+
+<!-- Featured #1 Premiere Apple TV+ Theater Card (Dynamically populated from VIDEOS[0]) -->
+<div id="heroTheaterMount" class="mt-8 sm:mt-10"></div>
+
+<!-- Live Anniversary Milestones & Countdown List -->
+<div id="anniversaryListMount" class="mx-auto mt-7 sm:mt-9 max-w-3xl text-left"></div>
+</section>
+
+<!-- =====================================================================
+STICKY APPLE SEGMENTED FILTER BAR
+===================================================================== -->
+<div
+id="chapters-bar"
+class="glass-nav sticky top-[52px] sm:top-[56px] z-30 w-full py-2.5 sm:py-3"
+>
+<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+<div
+id="filterPills"
+role="tablist"
+aria-label="Filter wedding film chapters"
+class="no-scrollbar flex items-center gap-2 overflow-x-auto snap-x snap-mandatory py-0.5 sm:justify-center"
+>
+<!-- Dynamically populated from CONFIG.SECTIONS -->
+</div>
+</div>
+</div>
+
+<!-- =====================================================================
+DYNAMIC WEDDING FILM SECTIONS CONTAINER
+===================================================================== -->
+<div
+id="sectionsContainer"
+class="mx-auto max-w-6xl space-y-14 sm:space-y-20 px-4 py-10 sm:px-6 sm:py-16 lg:px-8"
+>
+<!-- Dynamically populated from CONFIG.SECTIONS & CONFIG.VIDEOS -->
+</div>
+
+<!-- =====================================================================
+ENGAGEMENT PHOTO GALLERY (OPEN + PRIVATE PASSCODE-PROTECTED ALBUMS)
+===================================================================== -->
+<div
+id="engagementGalleryMount"
+class="mx-auto max-w-6xl px-4 pb-12 sm:px-6 sm:pb-16 lg:px-8"
+>
+<!-- Dynamically populated from CONFIG.ENGAGEMENT_GALLERY -->
+</div>
+
+<!-- =====================================================================
+INVITATION CARD (HIDDEN UNTIL "INVITATION CARD" BUTTON IS CLICKED)
+===================================================================== -->
+<div
+id="invitationCardMount"
+class="hidden mx-auto max-w-4xl px-4 py-10 sm:px-6 sm:py-16 lg:px-8"
+>
+<!-- Dynamically populated from CONFIG.INVITATION_CARD -->
+</div>
+
+<!-- =====================================================================
+ROMANTIC "SEND YOUR BLESSINGS" SECTION
+===================================================================== -->
+<section class="mx-auto max-w-4xl px-4 pt-4 pb-12 sm:px-6 sm:pb-16 lg:px-8">
+<div class="glass-card relative overflow-hidden rounded-[26px] sm:rounded-[32px] px-6 py-10 sm:px-12 sm:py-14 text-center">
+<!-- Subtle corner rose-gold glow -->
+<div
+class="pointer-events-none absolute -top-24 left-1/2 h-56 w-96 -translate-x-1/2 rounded-full blur-3xl opacity-30"
+style="background: radial-gradient(circle, var(--accent-rose), var(--accent-gold), transparent 70%);"
+aria-hidden="true"
+></div>
+
+<p
+class="relative text-[11px] font-semibold uppercase tracking-[0.26em]"
+style="color: var(--accent-gold);"
+>
+With Love &amp; Gratitude
+</p>
+
+<h2
+class="relative mt-2 font-serif italic text-3xl sm:text-4xl font-medium tracking-tight"
+style="color: var(--text-primary);"
+>
+Send Your Blessings
+</h2>
+
+<p
+class="relative mx-auto mt-3 max-w-md text-sm sm:text-[15px] leading-relaxed"
+style="color: var(--text-secondary);"
+>
+Thank you for celebrating this unforgettable journey with Monika &amp; Avadh. Leave a warm blessing for their forever.
+</p>
+
+<!-- Primary Send Blessing Button -->
+<div class="relative mt-7 flex flex-col items-center justify-center gap-3">
+<button
+id="footerBlessingBtn"
+type="button"
+class="inline-flex min-h-[48px] items-center gap-2.5 rounded-full px-7 text-sm font-medium shadow-md transition-all duration-200 hover:scale-[1.04] active:scale-95"
+style="background: linear-gradient(135deg, var(--accent-rose), var(--accent-gold)); color: #FFFFFF;"
+>
+<span>Send a Blessing</span>
+<span class="text-base leading-none">❤️</span>
+</button>
+
+<p class="text-xs font-medium" style="color: var(--text-muted);">
+<span id="footerLoveCount" class="font-semibold tabular-nums" style="color: var(--accent-gold);">108</span>
+blessings shared by family &amp; friends
+</p>
+</div>
+
+<!-- Quick Romantic Wish Chips -->
+<div class="relative mt-7 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+<button
+type="button"
+data-wish="Forever Together ✨"
+class="wish-chip min-h-[40px] rounded-full border px-4 text-xs sm:text-[13px] font-medium transition-all duration-200 hover:scale-[1.03] active:scale-95"
+style="border-color: var(--border-hairline); background: var(--bg-pill); color: var(--text-primary);"
+>
+Forever Together ✨
+</button>
+<button
+type="button"
+data-wish="Endless Joy 🥂"
+class="wish-chip min-h-[40px] rounded-full border px-4 text-xs sm:text-[13px] font-medium transition-all duration-200 hover:scale-[1.03] active:scale-95"
+style="border-color: var(--border-hairline); background: var(--bg-pill); color: var(--text-primary);"
+>
+Endless Joy 🥂
+</button>
+<button
+type="button"
+data-wish="Made for Each Other ❤️"
+class="wish-chip min-h-[40px] rounded-full border px-4 text-xs sm:text-[13px] font-medium transition-all duration-200 hover:scale-[1.03] active:scale-95"
+style="border-color: var(--border-hairline); background: var(--bg-pill); color: var(--text-primary);"
+>
+Made for Each Other ❤️
+</button>
+<button
+type="button"
+data-wish="God Bless You Both 🙏"
+class="wish-chip min-h-[40px] rounded-full border px-4 text-xs sm:text-[13px] font-medium transition-all duration-200 hover:scale-[1.03] active:scale-95"
+style="border-color: var(--border-hairline); background: var(--bg-pill); color: var(--text-primary);"
+>
+God Bless You Both 🙏
+</button>
+</div>
+</div>
+</section>
+
+<!-- Minimal Apple-Style Footer -->
+<footer class="safe-bottom border-t py-8 text-center" style="border-color: var(--border-hairline);">
+<p class="font-serif italic text-lg" style="color: var(--text-primary);">
+Monika <span style="color: var(--accent-rose);">&amp;</span> Avadh
+</p>
+<p
+id="footerMilestoneDates"
+class="mt-2 font-serif text-sm tracking-wider"
+style="color: var(--accent-gold);"
+>
+Engagement · 19 MAY 2024 <span class="mx-1.5" style="color: var(--accent-rose);">✦</span> Wedding · 31 NOV 2024
+</p>
+<p class="mt-1.5 text-xs tracking-wide" style="color: var(--text-muted);">
+Monika &amp; Avadh · Forever Begins Here
+</p>
+</footer>
+</main>
+
+<!-- =========================================================================
+APPLE PHOTOS-STYLE FULLSCREEN PHOTO LIGHTBOX MODAL
+========================================================================= -->
+<div
+id="photoLightboxModal"
+class="cinema-backdrop fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6"
+role="dialog"
+aria-modal="true"
+aria-labelledby="lightboxTitle"
+aria-hidden="true"
+>
+<div
+class="cinema-panel relative flex max-h-[94vh] w-full max-w-4xl flex-col overflow-hidden rounded-[24px] sm:rounded-[28px] border border-white/15 bg-[#121017]/95 text-[#F7F2EE] shadow-2xl"
+>
+<!-- Lightbox Top Header -->
+<div class="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3.5 sm:px-6">
+<div class="flex min-w-0 items-center gap-2.5">
+<span
+id="lightboxCounter"
+class="shrink-0 rounded-full bg-white/10 px-2.5 py-1 text-[11px] font-semibold tracking-wider text-[#E3BC8B] tabular-nums"
+>
+1 / 6
+</span>
+<span
+id="lightboxAlbumBadge"
+class="truncate text-xs font-medium tracking-wide text-[#E89AA8]"
+>
+Engagement Gallery · 19 MAY 2024
+</span>
+</div>
+
+<button
+id="lightboxCloseBtn"
+type="button"
+class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-white/85 transition-all hover:bg-white/20 hover:text-white active:scale-95"
+aria-label="Close photo viewer"
+>
+<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+</svg>
+</button>
+</div>
+
+<!-- Fullscreen Photo Stage -->
+<div class="relative flex flex-1 items-center justify-center bg-black/90 p-2 sm:p-4 min-h-[260px] max-h-[64vh]">
+<img
+id="lightboxImage"
+src=""
+alt=""
+class="max-h-[60vh] w-auto max-w-full rounded-xl object-contain shadow-2xl transition-opacity duration-300"
+/>
+
+<!-- Floating Prev / Next Arrows on Stage -->
+<button
+id="lightboxPrevBtn"
+type="button"
+class="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white backdrop-blur-md transition-all hover:bg-black/75 active:scale-95"
+aria-label="Previous photo"
+>
+<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+</svg>
+</button>
+
+<button
+id="lightboxNextBtn"
+type="button"
+class="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white backdrop-blur-md transition-all hover:bg-black/75 active:scale-95"
+aria-label="Next photo"
+>
+<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+</svg>
+</button>
+</div>
+
+<!-- Photo Metadata Footer -->
+<div class="flex flex-col gap-3 border-t border-white/10 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+<div class="min-w-0">
+<h3 id="lightboxTitle" class="font-serif text-2xl sm:text-[26px] font-medium leading-tight text-white">
+Photo Title
+</h3>
+<p id="lightboxCaption" class="mt-1 text-xs sm:text-sm leading-relaxed text-white/70">
+Photo caption
+</p>
+</div>
+
+<button
+id="lightboxLoveBtn"
+type="button"
+class="inline-flex min-h-[42px] shrink-0 items-center justify-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-4 text-xs font-medium text-white transition-all hover:bg-white/20 active:scale-95"
+>
+<span>❤️</span>
+<span>Send Love</span>
+</button>
+</div>
+</div>
+</div>
+
+<!-- =========================================================================
+APPLE TV+ CINEMA PLAYER MODAL
+========================================================================= -->
+<div
+id="cinemaModal"
+class="cinema-backdrop fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6"
+role="dialog"
+aria-modal="true"
+aria-labelledby="modalTitle"
+aria-hidden="true"
+>
+<div
+class="cinema-panel relative flex max-h-[94vh] w-full max-w-4xl flex-col overflow-y-auto rounded-[24px] sm:rounded-[28px] border border-white/15 bg-[#121017]/95 text-[#F7F2EE] shadow-2xl"
+>
+<!-- Modal Top Header -->
+<div class="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3.5 sm:px-6">
+<div class="flex min-w-0 items-center gap-2.5">
+<span
+id="modalIndexBadge"
+class="shrink-0 rounded-full bg-white/10 px-2.5 py-1 text-[11px] font-semibold tracking-wider text-[#E3BC8B]"
+>
+01 / 12
+</span>
+<span
+id="modalSectionBadge"
+class="truncate text-xs font-medium tracking-wide text-[#E89AA8]"
+>
+Musical Keepsake
+</span>
+</div>
+
+<button
+id="modalCloseBtn"
+type="button"
+class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-white/85 transition-all hover:bg-white/20 hover:text-white active:scale-95"
+aria-label="Close cinema player"
+>
+<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+</svg>
+</button>
+</div>
+
+<!-- Responsive 16:9 YouTube Player Frame -->
+<div class="relative w-full bg-black aspect-video">
+<iframe
+id="cinemaIframe"
+class="absolute inset-0 h-full w-full border-0"
+src=""
+title="Wedding Cinema Video Player"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+referrerpolicy="strict-origin-when-cross-origin"
+allowfullscreen
+></iframe>
+</div>
+
+<!-- Film Metadata + Action Controls (No Share Link Button) -->
+<div class="p-4 sm:p-6">
+<div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+<div class="min-w-0">
+<h3 id="modalTitle" class="font-serif text-2xl sm:text-3xl font-medium leading-tight text-white">
+A Tale of Love &amp; Forever
+</h3>
+<p id="modalSubtitle" class="mt-0.5 text-xs font-medium uppercase tracking-[0.16em] text-[#E3BC8B]">
+Wedding Song
+</p>
+<p id="modalCaption" class="mt-2 text-sm leading-relaxed text-white/70">
+A soulful musical keepsake weaving Monika &amp; Avadh’s sweetest memories into melody.
+</p>
+</div>
+
+<!-- Action Pills inside Player -->
+<div class="flex shrink-0 flex-wrap items-center gap-2">
+<button
+id="modalLoveBtn"
+type="button"
+class="inline-flex min-h-[42px] items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-4 text-xs font-medium text-white transition-all hover:bg-white/20 active:scale-95"
+>
+<span>❤️</span>
+<span>Send Love</span>
+</button>
+
+<a
+id="modalYoutubeLink"
+href="#"
+target="_blank"
+rel="noopener noreferrer"
+class="inline-flex min-h-[42px] items-center gap-1.5 rounded-full bg-[#F7F2EE] px-4 text-xs font-semibold text-[#121017] transition-all hover:bg-white active:scale-95"
+>
+<span>Watch on YouTube</span>
+<svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+</svg>
+</a>
+</div>
+</div>
+
+<!-- Tactile Previous / Next Chapter Navigation -->
+<div class="mt-5 grid grid-cols-2 gap-3 border-t border-white/10 pt-4">
+<button
+id="modalPrevBtn"
+type="button"
+class="group flex min-h-[52px] items-center gap-2.5 rounded-2xl border border-white/10 bg-white/[0.05] px-3.5 py-2.5 text-left transition-all hover:border-white/25 hover:bg-white/10 active:scale-[0.98]"
+>
+<span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/10 text-white/80 transition-transform group-hover:-translate-x-0.5">
+<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+</svg>
+</span>
+<span class="min-w-0">
+<span class="block text-[10px] font-semibold uppercase tracking-wider text-white/50">Previous</span>
+<span id="modalPrevTitle" class="hidden sm:block truncate text-xs font-medium text-white/90">Chapter</span>
+</span>
+</button>
+
+<button
+id="modalNextBtn"
+type="button"
+class="group flex min-h-[52px] items-center justify-end gap-2.5 rounded-2xl border border-white/10 bg-white/[0.05] px-3.5 py-2.5 text-right transition-all hover:border-white/25 hover:bg-white/10 active:scale-[0.98]"
+>
+<span class="min-w-0">
+<span class="block text-[10px] font-semibold uppercase tracking-wider text-white/50">Up Next</span>
+<span id="modalNextTitle" class="hidden sm:block truncate text-xs font-medium text-white/90">Chapter</span>
+</span>
+<span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/10 text-white/80 transition-transform group-hover:translate-x-0.5">
+<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+</svg>
+</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- =========================================================================
+APPLE-STYLE PRIVATE PASSCODE MODAL (Ceremony & Engagement Vaults)
+========================================================================= -->
+<div
+id="passcodeModal"
+class="cinema-backdrop fixed inset-0 z-[55] flex items-center justify-center p-4 sm:p-6"
+role="dialog"
+aria-modal="true"
+aria-labelledby="passcodeTitle"
+aria-hidden="true"
+>
+<div
+id="passcodePanel"
+class="cinema-panel relative w-full max-w-[390px] overflow-hidden rounded-[26px] border border-white/15 bg-[#15121B]/95 p-6 sm:p-8 text-center text-[#F7F2EE] shadow-2xl"
+>
+<!-- Close Button -->
+<button
+id="passcodeCloseBtn"
+type="button"
+class="absolute top-4 right-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white/75 transition-all hover:bg-white/20 hover:text-white active:scale-95"
+aria-label="Close passcode prompt"
+>
+<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+</svg>
+</button>
+
+<!-- Minimalist Champagne Gold & Blush Rose Lock Emblem -->
+<div
+class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-[#E3BC8B]/30"
+style="background: linear-gradient(135deg, rgba(232, 154, 168, 0.18), rgba(227, 188, 139, 0.18));"
+>
+<svg class="h-6 w-6 text-[#E3BC8B]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+<rect x="4" y="11" width="16" height="10" rx="2.5" />
+<path stroke-linecap="round" d="M8 11V7a4 4 0 118 0v4" />
+</svg>
+</div>
+
+<p id="passcodeEyebrow" class="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#E3BC8B]">
+Family Access
+</p>
+
+<h3 id="passcodeTitle" class="mt-1.5 font-serif text-[28px] font-medium leading-tight text-white">
+Private Ceremony Film
+</h3>
+
+<p id="passcodeDescription" class="mt-2 text-xs sm:text-[13px] leading-relaxed text-white/70">
+Enter the ceremony passcode to watch this chapter.
+</p>
+
+<form id="passcodeForm" class="mt-6 space-y-3.5" novalidate>
+<div class="relative">
+<input
+id="passcodeInput"
+type="password"
+inputmode="numeric"
+enterkeyhint="done"
+autocomplete="one-time-code"
+autocorrect="off"
+autocapitalize="off"
+spellcheck="false"
+placeholder="Enter passcode"
+aria-label="Passcode"
+class="w-full min-h-[48px] rounded-2xl border border-white/15 bg-white/[0.07] px-11 py-3 text-center text-base font-medium tracking-[0.28em] text-white placeholder:tracking-normal placeholder:text-white/35 focus:border-[#E3BC8B]/60 focus:bg-white/[0.1] focus:outline-none transition-all"
+/>
+
+<!-- Show / Hide Passcode Toggle -->
+<button
+id="passcodeEyeBtn"
+type="button"
+class="absolute inset-y-0 right-1.5 my-auto flex h-9 w-9 items-center justify-center rounded-full text-white/55 transition-colors hover:text-white"
+aria-label="Show passcode"
+>
+<svg id="passcodeEyeIcon" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+<path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+<circle cx="12" cy="12" r="3" />
+</svg>
+</button>
+</div>
+
+<p
+id="passcodeError"
+role="alert"
+aria-live="polite"
+class="min-h-[18px] text-xs font-medium text-[#FF8A9E]"
+></p>
+
+<button
+id="passcodeSubmitBtn"
+type="submit"
+class="w-full min-h-[48px] rounded-2xl text-sm font-semibold text-[#121017] shadow-lg transition-all duration-200 hover:brightness-105 active:scale-[0.98]"
+style="background: linear-gradient(135deg, #F3D5A5, #E8A6B2);"
+>
+Unlock Ceremony
+</button>
+</form>
+</div>
+</div>
+
+<!-- =========================================================================
+iOS-STYLE TOAST MESSAGE BOX (No alert() used anywhere)
+========================================================================= -->
+<div
+id="toastPill"
+role="status"
+aria-live="polite"
+class="toast-pill fixed bottom-6 left-1/2 z-[60] max-w-[90vw] rounded-full border border-white/15 bg-[#1B1820]/95 px-5 py-3 text-center text-xs sm:text-sm font-medium text-white shadow-2xl backdrop-blur-xl"
+>
+Toast message
+</div>
+
+<!-- =========================================================================
+APPLICATION SCRIPT
+========================================================================= -->
+<script>
+/* =========================================================================
+✨ EASY 3-SECOND REORDERING GUIDE ✨
+-------------------------------------------------------------------------
+1. REORDER SECTIONS:
+Cut & paste any object inside CONFIG.SECTIONS up or down.
+The filter bar and page sections update automatically!
+
+2. REORDER VIDEOS:
+Cut & paste any object inside CONFIG.VIDEOS up or down.
+- The VERY FIRST video in CONFIG.VIDEOS automatically becomes the
+Hero Premiere at the top of the page.
+- Videos inside each section appear in the exact order listed here,
+with automatic sequential numbering!
+- You can move a video to a different section simply by changing its
+`section` value (e.g., "keepsake", "teasers", "ceremony", "highlights").
+- For `youtube`, you can paste EITHER a YouTube ID ("OBRnmQJ2uwY")
+OR a full YouTube URL ("https://youtu.be/OBRnmQJ2uwY").
+========================================================================= */
+
+const CONFIG = {
+COUPLE: {
+names: "Monika & Avadh",
+engagementDate: "19 MAY 2024",
+weddingDate: "31 NOV 2024",
+// Calendar dates used for live elapsed & countdown math (YYYY-MM-DD)
+engagementTimerDate: "2024-05-19",
+weddingTimerDate: "2024-11-30"
+},
+
+CEREMONY_PASSWORD: "31112024",
+ENGAGEMENT_PASSWORD: "19052024",
+
+SECTIONS: [
+{
+id: "keepsake",
+eyebrow: "Opening Premiere",
+label: "Musical Keepsake",
+filterLabel: "Musical Keepsake",
+description: "The signature melody celebrating Monika & Avadh’s journey together."
+},
+{
+id: "teasers",
+eyebrow: "First Glimpses",
+label: "Teasers & Promos",
+filterLabel: "Teasers",
+description: "Cinematic previews and the official title reveal of the wedding series."
+},
+{
+id: "ceremony",
+eyebrow: "Sequential Chapters · 31 NOV 2024",
+label: "Ceremony Events",
+filterLabel: "Ceremony",
+description: "Every sacred ritual, joyous dance, and heartfelt vow in sequential order."
+},
+{
+id: "highlights",
+eyebrow: "Forever Moments",
+label: "Highlights & Reels",
+filterLabel: "Highlights",
+description: "Curated celebration highlights and short keepsake reels."
+}
+],
+
+VIDEOS: [
+/* ── 1. MUSICAL KEEPSAKE (Hero Premiere + Section #1) ── */
+{
+section: "keepsake",
+youtube: "https://youtu.be/OBRnmQJ2uwY",
+title: "A Tale of Love & Forever",
+subtitle: "Wedding Song",
+caption: "A soulful musical keepsake weaving Monika & Avadh’s sweetest memories into melody."
+},
+
+/* ── 2. TEASERS & PROMOS ── */
+
+{
+section: "teasers",
+youtube: "https://youtu.be/lrlK_MBNY-w",
+title: "Official Wedding Teaser ❤️",
+subtitle: "Official Promo",
+caption: "Smiles, rituals, and timeless frames introducing Monika & Avadh’s wedding film."
+},
+{
+section: "teasers",
+youtube: "https://youtu.be/y4wH-10Pw0w",
+title: "Official Title Video ❤️",
+subtitle: "Title Reveal",
+caption: "The grand cinematic title opening for the Monika & Avadh Wedding Series."
+},
+
+/* ── 3. CEREMONY EVENTS (Private Vault — Unlocked with 31112024) ── */
+{
+section: "ceremony",
+youtube: "https://youtu.be/MH5KFyXbO8A",
+title: "Mandap & Haldi Ceremony ❤️",
+subtitle: "Chapter 01",
+caption: "Golden turmeric blessings, laughter, and sacred beginnings under the Mandap."
+},
+{
+section: "ceremony",
+youtube: "https://youtu.be/pwiNj4QBZhw",
+title: "Mandap Vidhi & Haldi Full Video ❤️",
+subtitle: "Chapter 02",
+caption: "Complete traditional Mandap Vidhi and joyful Haldi rituals with family."
+},
+{
+section: "ceremony",
+youtube: "https://youtu.be/Ya9C9rKiYyY",
+title: "Grand Garba Night & Sangeet Celebration ❤️",
+subtitle: "Chapter 03",
+caption: "An unforgettable evening of music, rhythm, and dazzling Garba performances."
+},
+{
+section: "ceremony",
+youtube: "https://youtu.be/qEx3odlfxA4",
+title: "Traditional Dandiya Raas Night ❤️",
+subtitle: "Chapter 04",
+caption: "Vibrant colors, swirling lights, and festive Dandiya beats into the night."
+},
+{
+section: "ceremony",
+youtube: "https://youtu.be/K9azXh5uYNo",
+title: "Jaan Aagman & Lagna Vidhi ❤️",
+subtitle: "Chapter 05",
+caption: "The grand royal welcome of the groom and the sacred union of two families."
+},
+{
+section: "ceremony",
+youtube: "https://youtu.be/6afMZDyupFA",
+title: "Mangal Phera ❤️",
+subtitle: "Chapter 06",
+caption: "Sacred vows around the holy fire, sealing Monika & Avadh’s forever."
+},
+
+/* ── 4. HIGHLIGHTS & REELS ── */
+{
+section: "highlights",
+youtube: "https://youtu.be/h1yjtqMokOU",
+title: "Wedding Highlights ❤️",
+subtitle: "Highlight Film",
+caption: "The most emotional, joyous, and breathtaking moments woven into one film."
+},
+{
+section: "highlights",
+youtube: "https://youtu.be/-T_a-0MTP1I",
+title: "Wedding Reels ❤️",
+subtitle: "Short Moments",
+caption: "Short, sweet keepsake moments from the celebration."
+}
+],
+
+/* -----------------------------------------------------------------------
+✨ ENGAGEMENT PHOTO GALLERY (19 MAY 2024) ✨
+Replace any `src` URL below with your own engagement photo URLs anytime!
+- `publicPhotos` -> Open Gallery (visible to everyone, no password)
+- `privatePhotos` -> Family Photos (unlocked with 19052024)
+----------------------------------------------------------------------- */
+ENGAGEMENT_GALLERY: {
+publicPhotos: [
+{
+src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=85",
+title: "The Promise Begins",
+caption: "A radiant smile and the first step toward forever on 19 MAY 2024."
+},
+{
+src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85",
+title: "Floral Blessings",
+caption: "Surrounded by blooms, warmth, and the joy of both families."
+},
+{
+src: "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=85",
+title: "Rings of Forever",
+caption: "Two rings, one timeless vow sealed with love."
+},
+{
+src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=85",
+title: "Hand in Hand",
+caption: "Quietly celebrating a lifetime of togetherness."
+},
+{
+src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=85",
+title: "Evening Glow",
+caption: "Golden hour light capturing every heartfelt glance."
+},
+{
+src: "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1200&q=85",
+title: "Written in the Stars",
+caption: "The celebration that marked the beginning of Monika & Avadh’s story."
+}
+],
+privatePhotos: [
+{
+src: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=1200&q=85",
+title: "Family Blessings",
+caption: "Heartfelt blessings and warm smiles from both families."
+},
+{
+src: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=85",
+title: "Together with Parents",
+caption: "Cherished moments with the people who mean the most."
+},
+{
+src: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1200&q=85",
+title: "Family Embraces",
+caption: "Warm hugs and joyful laughter shared with loved ones."
+},
+{
+src: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1200&q=85",
+title: "Family Portrait",
+caption: "A timeless engagement portrait with the whole family."
+},
+{
+src: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=85",
+title: "Siblings & Cousins",
+caption: "Candid celebration frames filled with energy and love."
+},
+{
+src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=85",
+title: "Family Toast to Forever",
+caption: "Both families coming together to celebrate Monika & Avadh."
+}
+]
+},
+
+/* -----------------------------------------------------------------------
+✨ INVITATION CARD (Hidden in "All" — Shown when button is clicked) ✨
+- Paste your Invitation Card URL (PDF, Google Drive, Canva, image, etc.) in `url`.
+- Leave `url: ""` empty if you want to hide the "Invitation Card" button completely.
+- Set `openDirectly: true` to open the URL immediately when the button is tapped.
+----------------------------------------------------------------------- */
+INVITATION_CARD: {
+label: "Invitation Card",
+url: "https://example.com/monika-avadh-invitation",
+openDirectly: false,
+title: "Wedding Invitation Card",
+subtitle: "Monika & Avadh · 31 NOV 2024",
+caption: "With the blessings of our families, we warmly invite you to celebrate the union of Monika & Avadh.",
+previewImage: "https://images.unsplash.com/photo-1607190074257-dd4b7af0309f?auto=format&fit=crop&w=1200&q=85"
+}
+};
+
+/* =========================================================================
+UTILITY HELPERS
+========================================================================= */
+
+function escapeHtml(str) {
+return String(str || "")
+.replace(/&/g, "&amp;")
+.replace(/</g, "&lt;")
+.replace(/>/g, "&gt;")
+.replace(/"/g, "&quot;")
+.replace(/'/g, "&#39;");
+}
+
+function getYouTubeId(input) {
+if (!input) return "";
+const trimmed = String(input).trim();
+if (/^[a-zA-Z0-9_-]{11}$/.test(trimmed)) return trimmed;
+try {
+const url = new URL(trimmed);
+if (url.hostname.includes("youtu.be")) {
+return url.pathname.replace("/", "").slice(0, 11);
+}
+if (url.searchParams.get("v")) {
+return url.searchParams.get("v").slice(0, 11);
+}
+const parts = url.pathname.split("/").filter(Boolean);
+const embedIdx = parts.indexOf("embed");
+if (embedIdx !== -1 && parts[embedIdx + 1]) {
+return parts[embedIdx + 1].slice(0, 11);
+}
+const shortsIdx = parts.indexOf("shorts");
+if (shortsIdx !== -1 && parts[shortsIdx + 1]) {
+return parts[shortsIdx + 1].slice(0, 11);
+}
+} catch (e) {
+// Fallback regex if URL parsing fails
+}
+const match = trimmed.match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([a-zA-Z0-9_-]{11})/);
+return match ? match[1] : trimmed;
+}
+
+const storage = {
+get(key, fallback) {
+try {
+const val = localStorage.getItem(key);
+return val !== null ? JSON.parse(val) : fallback;
+} catch (e) {
+return fallback;
+}
+},
+set(key, value) {
+try {
+localStorage.setItem(key, JSON.stringify(value));
+} catch (e) {
+// Ignore storage quota or iframe restrictions
+}
+}
+};
+
+/* =========================================================================
+NORMALIZED VIDEO DATA & APPLICATION STATE
+========================================================================= */
+
+const sectionMap = new Map(CONFIG.SECTIONS.map(sec => [sec.id, sec]));
+
+const normalizedVideos = CONFIG.VIDEOS.map((item, globalIndex) => {
+const videoId = getYouTubeId(item.youtube);
+return {
+...item,
+globalIndex,
+videoId,
+watchUrl: `https://youtu.be/${videoId}`,
+thumbUrl: `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`,
+sectionLabel: sectionMap.get(item.section)?.label || "Wedding Film"
+};
+});
+
+let activeFilter = "all";
+let currentModalIndex = -1;
+let pendingCeremonyIndex = -1;
+let pendingEngagementPhotoIndex = -1;
+let activePasscodeMode = "ceremony"; // "ceremony" | "engagement"
+// Always start locked on every fresh page load (never auto-unlock from browser storage)
+let ceremonyUnlocked = false;
+let engagementUnlocked = false;
+
+try {
+sessionStorage.removeItem("ma_ceremony_unlocked_v1");
+sessionStorage.removeItem("ma_engagement_unlocked_v1");
+localStorage.removeItem("ma_ceremony_unlocked_v1");
+localStorage.removeItem("ma_engagement_unlocked_v1");
+} catch (e) {
+// Ignore storage access restrictions
+}
+
+function isCeremonyVideo(video) {
+return Boolean(video && String(video.section || "").trim().toLowerCase() === "ceremony");
+}
+
+// Photo Lightbox State
+let lightboxAlbum = "public"; // "public" | "private"
+let lightboxIndex = -1;
+
+// Persistent Blessings & Watched Chapters
+let loveCount = Number(storage.get("ma_wedding_blessings_v2", 108)) || 108;
+let watchedIds = new Set(storage.get("ma_wedding_watched_v2", []));
+
+/* =========================================================================
+IMAGE FALLBACK HANDLERS
+========================================================================= */
+
+window.handleThumbError = function (img) {
+const videoId = img.dataset.vid || "";
+const title = img.dataset.title || "Monika & Avadh";
+const step = Number(img.dataset.fallbackStep || "0");
+if (step === 0 && videoId) {
+img.dataset.fallbackStep = "1";
+img.src = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+} else if (step === 1) {
+img.dataset.fallbackStep = "2";
+img.src = `https://placehold.co/1280x720/201B24/E3BC8B?text=${encodeURIComponent(title)}`;
+}
+};
+
+window.handleGalleryImgError = function (img) {
+if (img.dataset.fallbackDone) return;
+img.dataset.fallbackDone = "1";
+const title = img.dataset.title || "Engagement Memory";
+img.src = `https://placehold.co/960x720/201B24/E3BC8B?text=${encodeURIComponent(title)}`;
+};
+
+/* =========================================================================
+COUPLE MILESTONE DATES, THEME & TOAST HELPERS
+========================================================================= */
+
+function renderCoupleDates() {
+const engEl = document.getElementById("heroEngagementDate");
+const wedEl = document.getElementById("heroWeddingDate");
+const footerEl = document.getElementById("footerMilestoneDates");
+
+if (engEl) engEl.textContent = CONFIG.COUPLE.engagementDate;
+if (wedEl) wedEl.textContent = CONFIG.COUPLE.weddingDate;
+if (footerEl) {
+footerEl.innerHTML = `Engagement · ${escapeHtml(CONFIG.COUPLE.engagementDate)} <span class="mx-1.5" style="color: var(--accent-rose);">✦</span> Wedding · ${escapeHtml(CONFIG.COUPLE.weddingDate)}`;
+}
+}
+
+/* =========================================================================
+LIVE ANNIVERSARY MILESTONES & COUNTDOWN TIMERS
+========================================================================= */
+
+function parseLocalIsoDate(isoStr) {
+const [y, m, d] = String(isoStr).split("-").map(Number);
+return new Date(y, (m || 1) - 1, d || 1, 0, 0, 0, 0);
+}
+
+function formatOrdinal(num) {
+const mod100 = num % 100;
+if (mod100 >= 11 && mod100 <= 13) return `${num}th`;
+const mod10 = num % 10;
+if (mod10 === 1) return `${num}st`;
+if (mod10 === 2) return `${num}nd`;
+if (mod10 === 3) return `${num}rd`;
+return `${num}th`;
+}
+
+function getElapsedBreakdown(startDate, now) {
+const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+if (today < startDate) {
+return { years: 0, months: 0, days: 0, totalDays: 0 };
+}
+
+let years = today.getFullYear() - startDate.getFullYear();
+let months = today.getMonth() - startDate.getMonth();
+let days = today.getDate() - startDate.getDate();
+
+if (days < 0) {
+months -= 1;
+const prevMonthLastDay = new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+days += prevMonthLastDay;
+}
+if (months < 0) {
+years -= 1;
+months += 12;
+}
+
+const totalDays = Math.floor((today - startDate) / 86400000);
+return { years, months, days, totalDays };
+}
+
+function getNextAnniversaryInfo(startDate, now) {
+const startMonth = startDate.getMonth();
+const startDay = startDate.getDate();
+
+const thisYearLastDay = new Date(now.getFullYear(), startMonth + 1, 0).getDate();
+const thisYearDay = Math.min(startDay, thisYearLastDay);
+const isToday =
+now.getMonth() === startMonth &&
+now.getDate() === thisYearDay &&
+now.getFullYear() > startDate.getFullYear();
+
+if (isToday) {
+return {
+isToday: true,
+milestoneNumber: now.getFullYear() - startDate.getFullYear(),
+days: 0,
+hours: 0,
+minutes: 0,
+seconds: 0
+};
+}
+
+let targetYear = now.getFullYear();
+let candidate = new Date(targetYear, startMonth, thisYearDay, 0, 0, 0, 0);
+if (candidate <= now) {
+targetYear += 1;
+const nextYearLastDay = new Date(targetYear, startMonth + 1, 0).getDate();
+candidate = new Date(targetYear, startMonth, Math.min(startDay, nextYearLastDay), 0, 0, 0, 0);
+}
+
+const diffMs = Math.max(0, candidate - now);
+const totalSeconds = Math.floor(diffMs / 1000);
+const days = Math.floor(totalSeconds / 86400);
+const hours = Math.floor((totalSeconds % 86400) / 3600);
+const minutes = Math.floor((totalSeconds % 3600) / 60);
+const seconds = totalSeconds % 60;
+
+return {
+isToday: false,
+milestoneNumber: Math.max(1, targetYear - startDate.getFullYear()),
+days,
+hours,
+minutes,
+seconds
+};
+}
+
+const ANNIVERSARY_ITEMS = [
+{
+id: "wedding",
+icon: "💍",
+label: "Wedding Anniversary",
+displayDate: CONFIG.COUPLE.weddingDate,
+timerDate: CONFIG.COUPLE.weddingTimerDate,
+elapsedPrefix: "Married for"
+},
+{
+id: "engagement",
+icon: "✨",
+label: "Engagement Anniversary",
+displayDate: CONFIG.COUPLE.engagementDate,
+timerDate: CONFIG.COUPLE.engagementTimerDate,
+elapsedPrefix: "Engaged for"
+}
+];
+
+let anniversaryIntervalId = null;
+
+function updateAnniversaryTimers() {
+const now = new Date();
+
+ANNIVERSARY_ITEMS.forEach(item => {
+const startDate = parseLocalIsoDate(item.timerDate);
+const elapsed = getElapsedBreakdown(startDate, now);
+const next = getNextAnniversaryInfo(startDate, now);
+
+const elapsedEl = document.getElementById(`anniv-elapsed-${item.id}`);
+const nextLabelEl = document.getElementById(`anniv-next-label-${item.id}`);
+const countdownEl = document.getElementById(`anniv-countdown-${item.id}`);
+
+if (elapsedEl) {
+const parts = [];
+if (elapsed.years > 0) parts.push(`${elapsed.years} ${elapsed.years === 1 ? "yr" : "yrs"}`);
+if (elapsed.months > 0) parts.push(`${elapsed.months} ${elapsed.months === 1 ? "mo" : "mos"}`);
+parts.push(`${elapsed.days} ${elapsed.days === 1 ? "day" : "days"}`);
+elapsedEl.textContent = `${item.elapsedPrefix} ${parts.join(" · ")} (${elapsed.totalDays.toLocaleString()} days)`;
+}
+
+if (next.isToday) {
+if (nextLabelEl) nextLabelEl.textContent = `Celebrating ${formatOrdinal(next.milestoneNumber)} Anniversary`;
+if (countdownEl) {
+countdownEl.innerHTML = `<span class="inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold text-white" style="background: linear-gradient(135deg, var(--accent-rose), var(--accent-gold));">Happy Anniversary! 🥂</span>`;
+}
+} else {
+if (nextLabelEl) nextLabelEl.textContent = `Next · ${formatOrdinal(next.milestoneNumber)} Anniversary`;
+if (countdownEl) {
+const pad = n => String(n).padStart(2, "0");
+countdownEl.innerHTML = `
+<span class="inline-flex items-center gap-1.5 font-mono text-xs sm:text-[13px] font-semibold tabular-nums" style="color: var(--text-primary);">
+<span class="rounded-lg px-2 py-1" style="background: var(--bg-pill);">${next.days}<span class="ml-0.5 text-[10px] font-sans font-medium" style="color: var(--text-muted);">d</span></span>
+<span style="color: var(--accent-rose);">:</span>
+<span class="rounded-lg px-2 py-1" style="background: var(--bg-pill);">${pad(next.hours)}<span class="ml-0.5 text-[10px] font-sans font-medium" style="color: var(--text-muted);">h</span></span>
+<span style="color: var(--accent-rose);">:</span>
+<span class="rounded-lg px-2 py-1" style="background: var(--bg-pill);">${pad(next.minutes)}<span class="ml-0.5 text-[10px] font-sans font-medium" style="color: var(--text-muted);">m</span></span>
+<span style="color: var(--accent-rose);">:</span>
+<span class="rounded-lg px-2 py-1" style="background: var(--bg-pill); color: var(--accent-gold);">${pad(next.seconds)}<span class="ml-0.5 text-[10px] font-sans font-medium" style="color: var(--text-muted);">s</span></span>
+</span>
+`;
+}
+}
+});
+}
+
+function initAnniversaryList() {
+const mount = document.getElementById("anniversaryListMount");
+if (!mount) return;
+
+mount.innerHTML = `
+<div class="glass-card overflow-hidden rounded-[22px] sm:rounded-[26px]" style="border-color: var(--border-strong);">
+<div class="flex items-center justify-between border-b px-4 py-2.5 sm:px-5" style="border-color: var(--border-hairline); background: var(--bg-pill);">
+<span class="text-[10px] font-semibold uppercase tracking-[0.22em]" style="color: var(--accent-gold);">
+Anniversary Milestones &amp; Live Timer
+</span>
+<span class="inline-flex items-center gap-1.5 text-[10px] font-medium" style="color: var(--text-muted);">
+<span class="h-1.5 w-1.5 rounded-full animate-pulse" style="background: var(--accent-rose);"></span>
+Live
+</span>
+</div>
+
+<ul class="divide-y" style="border-color: var(--border-hairline);">
+${ANNIVERSARY_ITEMS.map(item => `
+<li class="flex flex-col gap-3 px-4 py-3.5 sm:flex-row sm:items-center sm:justify-between sm:px-5 sm:py-4" style="border-color: var(--border-hairline);">
+<div class="min-w-0">
+<div class="flex flex-wrap items-center gap-2">
+<span class="text-sm leading-none" aria-hidden="true">${item.icon}</span>
+<span class="font-serif text-lg sm:text-[19px] font-medium leading-tight" style="color: var(--text-primary);">
+${escapeHtml(item.label)}
+</span>
+<span class="rounded-full px-2 py-0.5 text-[10px] font-semibold tracking-wider" style="background: var(--bg-pill); color: var(--accent-gold);">
+${escapeHtml(item.displayDate)}
+</span>
+</div>
+<p id="anniv-elapsed-${item.id}" class="mt-1 text-xs leading-relaxed" style="color: var(--text-secondary);">
+Calculating milestone...
+</p>
+</div>
+
+<div class="flex flex-col sm:items-end gap-1.5 shrink-0">
+<span id="anniv-next-label-${item.id}" class="text-[10px] font-semibold uppercase tracking-[0.16em]" style="color: var(--accent-rose);">
+Next Anniversary
+</span>
+<div id="anniv-countdown-${item.id}"></div>
+</div>
+</li>
+`).join("")}
+</ul>
+</div>
+`;
+
+updateAnniversaryTimers();
+clearInterval(anniversaryIntervalId);
+anniversaryIntervalId = setInterval(updateAnniversaryTimers, 1000);
+}
+
+function applyTheme(isDark) {
+document.documentElement.classList.toggle("dark", isDark);
+const iconEl = document.getElementById("themeIcon");
+const labelEl = document.getElementById("themeLabel");
+const metaTheme = document.getElementById("metaThemeColor");
+
+if (iconEl) iconEl.textContent = isDark ? "☀️" : "🌙";
+if (labelEl) labelEl.textContent = isDark ? "Ivory" : "Cinema";
+if (metaTheme) metaTheme.setAttribute("content", isDark ? "#08070B" : "#FCF9F6");
+storage.set("ma_wedding_theme_v2", isDark ? "dark" : "light");
+}
+
+let toastTimer = null;
+function showToast(text) {
+const pill = document.getElementById("toastPill");
+if (!pill) return;
+pill.textContent = text;
+pill.classList.add("show");
+clearTimeout(toastTimer);
+toastTimer = setTimeout(() => {
+pill.classList.remove("show");
+}, 2800);
+}
+
+/* =========================================================================
+BLESSINGS & FLOATING HEARTS
+========================================================================= */
+
+function updateLoveUI() {
+const navCount = document.getElementById("navLoveCount");
+const footerCount = document.getElementById("footerLoveCount");
+if (navCount) navCount.textContent = loveCount;
+if (footerCount) footerCount.textContent = loveCount;
+}
+
+function spawnFloatingHearts(originX, originY, count = 6) {
+const symbols = ["❤️", "✨", "🥂", "🤍", "🌸"];
+for (let i = 0; i < count; i++) {
+const heart = document.createElement("span");
+heart.className = "floating-heart";
+heart.textContent = symbols[i % symbols.length];
+const drift = (Math.random() - 0.5) * 110;
+const rot = (Math.random() - 0.5) * 40;
+heart.style.left = `${originX + (Math.random() - 0.5) * 28}px`;
+heart.style.top = `${originY}px`;
+heart.style.setProperty("--drift", `${drift}px`);
+heart.style.setProperty("--rot", `${rot}deg`);
+heart.style.animationDelay = `${i * 75}ms`;
+document.body.appendChild(heart);
+setTimeout(() => heart.remove(), 2100);
+}
+}
+
+function triggerBlessing(event, customMessage = "Blessing sent to Monika & Avadh ❤️") {
+loveCount += 1;
+storage.set("ma_wedding_blessings_v2", loveCount);
+updateLoveUI();
+
+let x = window.innerWidth / 2;
+let y = window.innerHeight * 0.72;
+if (event && event.currentTarget) {
+const rect = event.currentTarget.getBoundingClientRect();
+x = rect.left + rect.width / 2;
+y = rect.top + rect.height / 2;
+}
+spawnFloatingHearts(x, y, 7);
+showToast(customMessage);
+}
+
+/* =========================================================================
+WATCHED PROGRESS UI
+========================================================================= */
+
+function updateWatchedProgressUI() {
+const total = normalizedVideos.length;
+const watchedCount = normalizedVideos.filter(v => watchedIds.has(v.videoId)).length;
+const textEl = document.getElementById("watchedProgressText");
+const barEl = document.getElementById("watchedProgressBar");
+
+if (textEl) {
+textEl.textContent = `${watchedCount} of ${total} Chapters Watched`;
+}
+if (barEl && total > 0) {
+barEl.style.width = `${Math.round((watchedCount / total) * 100)}%`;
+}
+}
+
+function markVideoWatched(videoId) {
+if (!videoId || watchedIds.has(videoId)) return;
+watchedIds.add(videoId);
+storage.set("ma_wedding_watched_v2", [...watchedIds]);
+updateWatchedProgressUI();
+renderHeroTheater();
+renderSections();
+}
+
+/* =========================================================================
+RENDER HERO PREMIERE CARD (Always VIDEOS[0])
+========================================================================= */
+
+function renderHeroTheater() {
+const mount = document.getElementById("heroTheaterMount");
+const premiere = normalizedVideos[0];
+if (!mount || !premiere) return;
+
+const isWatched = watchedIds.has(premiere.videoId);
+
+mount.innerHTML = `
+<article
+class="film-card glass-card group relative cursor-pointer overflow-hidden rounded-[24px] sm:rounded-[30px]"
+data-open-index="0"
+role="button"
+tabindex="0"
+aria-label="Play premiere film: ${escapeHtml(premiere.title)}"
+>
+<div class="relative aspect-video w-full overflow-hidden bg-black/20">
+<img
+src="${escapeHtml(premiere.thumbUrl)}"
+alt="${escapeHtml(premiere.title)}"
+data-vid="${escapeHtml(premiere.videoId)}"
+data-title="${escapeHtml(premiere.title)}"
+class="thumb-img h-full w-full object-cover"
+onerror="handleThumbError(this)"
+/>
+
+<!-- Cinema Gradient Scrim -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/15"></div>
+
+<!-- Top Badges -->
+<div class="absolute top-3.5 left-3.5 right-3.5 sm:top-5 sm:left-5 sm:right-5 flex items-center justify-between gap-2">
+<span class="inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-black/45 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#F5DEC0] backdrop-blur-md">
+<span>✦</span>
+<span>${escapeHtml(premiere.sectionLabel)}</span>
+</span>
+
+${isWatched ? `
+<span class="inline-flex items-center gap-1 rounded-full border border-white/25 bg-black/45 px-2.5 py-1 text-[11px] font-medium text-white/90 backdrop-blur-md">
+<span>Watched ✓</span>
+</span>
+` : ""}
+</div>
+
+<!-- Centered Frosted Play Orb -->
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="hero-play-orb flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full border border-white/40 bg-white/20 text-white transition-transform duration-300 group-hover:scale-110">
+<svg class="ml-1 h-7 w-7 sm:h-8 sm:w-8 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M8 5.14v14l11-7-11-7z" />
+</svg>
+</span>
+</div>
+
+<!-- Bottom Editorial Overlay -->
+<div class="absolute inset-x-0 bottom-0 p-5 sm:p-8 text-left text-white">
+<p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#E3BC8B]">
+${escapeHtml(premiere.subtitle)}
+</p>
+<h2 class="mt-1 font-serif text-2xl sm:text-4xl font-medium leading-tight tracking-tight">
+${escapeHtml(premiere.title)}
+</h2>
+<p class="mt-1.5 max-w-2xl text-xs sm:text-sm leading-relaxed text-white/80 line-clamp-2">
+${escapeHtml(premiere.caption)}
+</p>
+</div>
+</div>
+</article>
+`;
+}
+
+/* =========================================================================
+RENDER STICKY SEGMENTED FILTER PILLS
+========================================================================= */
+
+function renderFilterPills() {
+const container = document.getElementById("filterPills");
+if (!container) return;
+
+const totalGalleryPhotos =
+CONFIG.ENGAGEMENT_GALLERY.publicPhotos.length +
+CONFIG.ENGAGEMENT_GALLERY.privatePhotos.length;
+
+const pills = [
+{ id: "all", label: "All", count: normalizedVideos.length },
+...CONFIG.SECTIONS.map(sec => ({
+id: sec.id,
+label: sec.filterLabel || sec.label,
+count: normalizedVideos.filter(v => v.section === sec.id).length
+})).filter(p => p.count > 0),
+{ id: "engagement-gallery", label: "Engagement Gallery", count: totalGalleryPhotos }
+];
+
+// Show "Invitation Card" button only when a URL is configured
+if (CONFIG.INVITATION_CARD && String(CONFIG.INVITATION_CARD.url || "").trim()) {
+pills.push({
+id: "invitation-card",
+label: CONFIG.INVITATION_CARD.label || "Invitation Card",
+badgeIcon: "💌"
+});
+}
+
+container.innerHTML = pills
+.map(pill => {
+const isActive = activeFilter === pill.id;
+const badgeHtml =
+pill.badgeIcon
+? `<span class="text-xs leading-none" aria-hidden="true">${pill.badgeIcon}</span>`
+: `<span class="text-[11px] opacity-70 tabular-nums">${pill.count}</span>`;
+return `
+<button
+type="button"
+role="tab"
+aria-selected="${isActive}"
+data-filter-id="${escapeHtml(pill.id)}"
+class="snap-start inline-flex min-h-[38px] shrink-0 items-center gap-1.5 rounded-full px-4 text-xs sm:text-[13px] font-medium transition-all duration-200 active:scale-95"
+style="
+background: ${isActive ? "var(--bg-pill-active)" : "var(--bg-pill)"};
+color: ${isActive ? "var(--text-pill-active)" : "var(--text-primary)"};
+border: 1px solid ${isActive ? "transparent" : "var(--border-hairline)"};
+"
+>
+<span>${escapeHtml(pill.label)}</span>
+${badgeHtml}
+</button>
+`;
+})
+.join("");
+}
+
+/* =========================================================================
+RENDER WEDDING FILM SECTIONS
+========================================================================= */
+
+function renderSections() {
+const container = document.getElementById("sectionsContainer");
+if (!container) return;
+
+if (activeFilter === "engagement-gallery" || activeFilter === "invitation-card") {
+container.innerHTML = "";
+container.classList.add("hidden");
+return;
+}
+container.classList.remove("hidden");
+
+const sectionsToRender = CONFIG.SECTIONS.filter(sec => {
+if (activeFilter !== "all" && sec.id !== activeFilter) return false;
+return normalizedVideos.some(v => v.section === sec.id);
+});
+
+container.innerHTML = sectionsToRender
+.map(sec => {
+const items = normalizedVideos.filter(v => v.section === sec.id);
+const isCeremony = String(sec.id || "").trim().toLowerCase() === "ceremony";
+
+const vaultPillHtml = isCeremony
+? ceremonyUnlocked
+? `
+<span
+class="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-[11px] font-medium"
+style="border-color: var(--border-strong); background: var(--bg-pill); color: var(--accent-gold);"
+>
+<span>Unlocked ✓</span>
+<button
+id="lockCeremonyBtn"
+type="button"
+class="rounded-full border px-2 py-0.5 text-[10px] font-semibold transition-all hover:opacity-80 active:scale-95"
+style="border-color: var(--border-strong); color: var(--accent-rose);"
+>
+Lock
+</button>
+</span>
+`
+: `
+<span
+class="inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[11px] font-medium"
+style="border-color: var(--border-strong); background: var(--bg-pill); color: var(--accent-rose);"
+>
+<svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+<rect x="4" y="11" width="16" height="10" rx="2" />
+<path stroke-linecap="round" d="M8 11V7a4 4 0 118 0v4" />
+</svg>
+<span>Private Ceremony Vault — Passcode Required</span>
+</span>
+`
+: "";
+
+const gridClass =
+items.length === 1
+? "grid grid-cols-1 max-w-3xl"
+: items.length === 2
+? "grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-7"
+: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6";
+
+const cardsHtml = items
+.map((video, idx) => {
+const isLocked = isCeremony && !ceremonyUnlocked;
+const isWatched = watchedIds.has(video.videoId);
+const chapterNum = String(idx + 1).padStart(2, "0");
+
+return `
+<article
+class="film-card glass-card animate-card-in group flex cursor-pointer flex-col overflow-hidden rounded-[20px] sm:rounded-[24px]"
+style="animation-delay: ${Math.min(idx * 55, 280)}ms;"
+data-open-index="${video.globalIndex}"
+role="button"
+tabindex="0"
+aria-label="${isLocked ? "Unlock ceremony video: " : "Play video: "}${escapeHtml(video.title)}"
+>
+<div class="relative aspect-video w-full overflow-hidden bg-black/15">
+<img
+src="${escapeHtml(video.thumbUrl)}"
+alt="${escapeHtml(video.title)}"
+data-vid="${escapeHtml(video.videoId)}"
+data-title="${escapeHtml(video.title)}"
+loading="lazy"
+class="thumb-img h-full w-full object-cover ${isLocked ? "brightness-75" : ""}"
+onerror="handleThumbError(this)"
+/>
+
+<div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/15"></div>
+
+<!-- Chapter Numeral Badge -->
+<span class="absolute top-3 left-3 rounded-full border border-white/20 bg-black/45 px-2.5 py-0.5 text-[11px] font-semibold tracking-wider text-white/95 backdrop-blur-md tabular-nums">
+${chapterNum}
+</span>
+
+<!-- Top-Right Status Badge (Locked or Watched) -->
+${isLocked ? `
+<span class="absolute top-3 right-3 inline-flex items-center gap-1.5 rounded-full border border-[#E3BC8B]/40 bg-black/60 px-2.5 py-1 text-[11px] font-medium text-[#F5DEC0] backdrop-blur-md transition-transform duration-300 group-hover:scale-105">
+<svg class="h-3.5 w-3.5 text-[#E3BC8B]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+<rect x="4" y="11" width="16" height="10" rx="2" />
+<path stroke-linecap="round" d="M8 11V7a4 4 0 118 0v4" />
+</svg>
+Private
+</span>
+` : isWatched ? `
+<span class="absolute top-3 right-3 rounded-full border border-white/20 bg-black/45 px-2.5 py-0.5 text-[11px] font-medium text-white/90 backdrop-blur-md">
+Watched ✓
+</span>
+` : ""}
+
+<!-- Center Play Orb (Shown only when unlocked so locked thumbnails stay clean) -->
+${!isLocked ? `
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="flex h-12 w-12 items-center justify-center rounded-full border border-white/35 bg-black/40 text-white backdrop-blur-md transition-transform duration-300 group-hover:scale-110">
+<svg class="ml-0.5 h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M8 5.14v14l11-7-11-7z" />
+</svg>
+</span>
+</div>
+` : ""}
+</div>
+
+<div class="flex flex-1 flex-col p-4 sm:p-5">
+<p class="text-[10px] font-semibold uppercase tracking-[0.2em]" style="color: var(--accent-gold);">
+${escapeHtml(video.subtitle)}
+</p>
+<h3 class="mt-1 font-serif text-[21px] sm:text-[23px] font-medium leading-snug" style="color: var(--text-primary);">
+${escapeHtml(video.title)}
+</h3>
+<p class="mt-1.5 text-[13px] leading-relaxed" style="color: var(--text-secondary);">
+${escapeHtml(video.caption)}
+</p>
+</div>
+</article>
+`;
+})
+.join("");
+
+return `
+<section id="section-${escapeHtml(sec.id)}" aria-labelledby="heading-${escapeHtml(sec.id)}">
+<div class="mb-6 sm:mb-8 flex flex-col gap-2.5 sm:flex-row sm:items-end sm:justify-between border-b pb-4" style="border-color: var(--border-hairline);">
+<div>
+<p class="text-[11px] font-semibold uppercase tracking-[0.24em]" style="color: var(--accent-gold);">
+${escapeHtml(sec.eyebrow)}
+</p>
+<div class="mt-1 flex flex-wrap items-center gap-3">
+<h2
+id="heading-${escapeHtml(sec.id)}"
+class="font-serif text-3xl sm:text-4xl font-medium tracking-tight"
+style="color: var(--text-primary);"
+>
+${escapeHtml(sec.label)}
+</h2>
+${vaultPillHtml}
+</div>
+</div>
+<p class="max-w-md text-xs sm:text-sm" style="color: var(--text-secondary);">
+${escapeHtml(sec.description)}
+</p>
+</div>
+
+<div class="${gridClass}">
+${cardsHtml}
+</div>
+</section>
+`;
+})
+.join("");
+}
+
+/* =========================================================================
+RENDER ENGAGEMENT PHOTO GALLERY (Open + Private Passcode Albums)
+========================================================================= */
+
+function renderEngagementGallery() {
+const mount = document.getElementById("engagementGalleryMount");
+if (!mount) return;
+
+const shouldShow = activeFilter === "all" || activeFilter === "engagement-gallery";
+mount.classList.toggle("hidden", !shouldShow);
+if (!shouldShow) return;
+
+const { publicPhotos, privatePhotos } = CONFIG.ENGAGEMENT_GALLERY;
+
+const publicCardsHtml = publicPhotos
+.map((photo, idx) => `
+<article
+class="film-card glass-card animate-card-in group flex cursor-pointer flex-col overflow-hidden rounded-[20px] sm:rounded-[24px]"
+style="animation-delay: ${Math.min(idx * 50, 260)}ms;"
+data-photo-album="public"
+data-photo-index="${idx}"
+role="button"
+tabindex="0"
+aria-label="View engagement photo: ${escapeHtml(photo.title)}"
+>
+<div class="relative aspect-[4/3] w-full overflow-hidden bg-black/10">
+<img
+src="${escapeHtml(photo.src)}"
+alt="${escapeHtml(photo.title)}"
+data-title="${escapeHtml(photo.title)}"
+loading="lazy"
+class="thumb-img h-full w-full object-cover"
+onerror="handleGalleryImgError(this)"
+/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent opacity-80 transition-opacity group-hover:opacity-95"></div>
+<span class="absolute top-3 left-3 rounded-full border border-white/20 bg-black/45 px-2.5 py-0.5 text-[11px] font-semibold tracking-wider text-white/95 backdrop-blur-md tabular-nums">
+${String(idx + 1).padStart(2, "0")}
+</span>
+</div>
+<div class="flex flex-1 flex-col p-4 sm:p-5">
+<h4 class="font-serif text-[21px] sm:text-[23px] font-medium leading-snug" style="color: var(--text-primary);">
+${escapeHtml(photo.title)}
+</h4>
+<p class="mt-1.5 text-[13px] leading-relaxed" style="color: var(--text-secondary);">
+${escapeHtml(photo.caption)}
+</p>
+</div>
+</article>
+`)
+.join("");
+
+const privateCardsHtml = engagementUnlocked
+? privatePhotos
+.map((photo, idx) => `
+<article
+class="film-card glass-card animate-card-in group flex cursor-pointer flex-col overflow-hidden rounded-[20px] sm:rounded-[24px]"
+style="animation-delay: ${Math.min(idx * 50, 260)}ms;"
+data-photo-album="private"
+data-photo-index="${idx}"
+role="button"
+tabindex="0"
+aria-label="View family engagement photo: ${escapeHtml(photo.title)}"
+>
+<div class="relative aspect-[4/3] w-full overflow-hidden bg-black/15">
+<img
+src="${escapeHtml(photo.src)}"
+alt="${escapeHtml(photo.title)}"
+data-title="${escapeHtml(photo.title)}"
+loading="lazy"
+class="thumb-img h-full w-full object-cover transition-all duration-500"
+onerror="handleGalleryImgError(this)"
+/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 rounded-full border border-white/20 bg-black/45 px-2.5 py-0.5 text-[11px] font-semibold tracking-wider text-white/95 backdrop-blur-md tabular-nums">
+${String(idx + 1).padStart(2, "0")}
+</span>
+</div>
+
+<div class="flex flex-1 flex-col p-4 sm:p-5">
+<h4 class="font-serif text-[21px] sm:text-[23px] font-medium leading-snug" style="color: var(--text-primary);">
+${escapeHtml(photo.title)}
+</h4>
+<p class="mt-1.5 text-[13px] leading-relaxed" style="color: var(--text-secondary);">
+${escapeHtml(photo.caption)}
+</p>
+</div>
+</article>
+`)
+.join("")
+: "";
+
+const privateStatusPill = engagementUnlocked
+? `
+<span
+class="inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[11px] font-medium"
+style="border-color: var(--border-strong); background: var(--bg-pill); color: var(--accent-gold);"
+>
+<span>Unlocked ✓</span>
+</span>
+`
+: `
+<span
+class="inline-flex items-center gap-1 text-[11px] font-normal"
+style="color: var(--text-muted);"
+>
+<svg class="h-3 w-3 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+<rect x="4" y="11" width="16" height="10" rx="2" />
+<path stroke-linecap="round" d="M8 11V7a4 4 0 118 0v4" />
+</svg>
+<span>Private Album · Passcode Required</span>
+</span>
+`;
+
+mount.innerHTML = `
+<section id="section-engagement-gallery" aria-labelledby="heading-engagement-gallery" class="pt-4 sm:pt-6">
+<!-- Main Engagement Gallery Header -->
+<div class="mb-8 sm:mb-10 flex flex-col gap-2.5 sm:flex-row sm:items-end sm:justify-between border-b pb-4" style="border-color: var(--border-hairline);">
+<div>
+<p class="text-[11px] font-semibold uppercase tracking-[0.24em]" style="color: var(--accent-gold);">
+Engagement Photo Gallery · ${escapeHtml(CONFIG.COUPLE.engagementDate)}
+</p>
+<h2
+id="heading-engagement-gallery"
+class="mt-1 font-serif text-3xl sm:text-4xl font-medium tracking-tight"
+style="color: var(--text-primary);"
+>
+Engagement Memories
+</h2>
+</div>
+<p class="max-w-md text-xs sm:text-sm" style="color: var(--text-secondary);">
+Highlights from the day Monika &amp; Avadh said yes, paired with a private keepsake album for close family.
+</p>
+</div>
+
+<!-- Sub-Section 1: Open Gallery (Without Password) -->
+<div class="mb-12 sm:mb-16">
+<div class="mb-5 flex flex-wrap items-center justify-between gap-2">
+<div>
+<h3 class="font-serif text-2xl sm:text-[28px] font-medium" style="color: var(--text-primary);">
+Open Gallery
+</h3>
+<p class="text-xs sm:text-sm" style="color: var(--text-muted);">
+Open to all guests — tap any photograph to view fullscreen.
+</p>
+</div>
+<span
+class="inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[11px] font-medium"
+style="border-color: var(--border-hairline); background: var(--bg-pill); color: var(--accent-gold);"
+>
+${publicPhotos.length} Photos · Open Access
+</span>
+</div>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+${publicCardsHtml}
+</div>
+</div>
+
+<!-- Sub-Section 2: Family Photos (Hidden until unlocked with 19052024) -->
+<div class="${engagementUnlocked ? "" : "border-t pt-5 opacity-75 transition-opacity duration-300 hover:opacity-100"}" style="${engagementUnlocked ? "" : "border-color: var(--border-hairline);"}">
+<div class="${engagementUnlocked ? "mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between" : "flex flex-wrap items-center justify-between gap-2.5"}">
+<div class="flex flex-wrap items-center gap-2">
+<h3
+class="${engagementUnlocked ? "font-serif text-2xl sm:text-[28px] font-medium" : "font-serif text-lg sm:text-xl font-medium"}"
+style="color: ${engagementUnlocked ? "var(--text-primary)" : "var(--text-muted)"};"
+>
+Family Photos
+</h3>
+${privateStatusPill}
+</div>
+
+${!engagementUnlocked ? `
+<button
+id="unlockEngagementBtn"
+type="button"
+class="inline-flex min-h-[36px] items-center justify-center gap-1.5 rounded-full border px-3.5 text-xs font-medium transition-all duration-200 hover:opacity-100 active:scale-95"
+style="border-color: var(--border-hairline); background: transparent; color: var(--text-muted);"
+>
+<svg class="h-3 w-3 opacity-75" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+<rect x="4" y="11" width="16" height="10" rx="2" />
+<path stroke-linecap="round" d="M8 11V7a4 4 0 118 0v4" />
+</svg>
+<span>Unlock Family Photos</span>
+</button>
+` : ""}
+</div>
+
+${engagementUnlocked ? `
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+${privateCardsHtml}
+</div>
+` : ""}
+</div>
+</section>
+`;
+}
+
+/* =========================================================================
+RENDER INVITATION CARD (Hidden until "Invitation Card" button is clicked)
+========================================================================= */
+
+function renderInvitationCard() {
+const mount = document.getElementById("invitationCardMount");
+if (!mount) return;
+
+const card = CONFIG.INVITATION_CARD;
+const cardUrl = String(card?.url || "").trim();
+const shouldShow = activeFilter === "invitation-card" && Boolean(cardUrl);
+
+mount.classList.toggle("hidden", !shouldShow);
+if (!shouldShow) {
+mount.innerHTML = "";
+return;
+}
+
+mount.innerHTML = `
+<section id="section-invitation-card" aria-labelledby="heading-invitation-card" class="animate-card-in">
+<div class="mb-7 sm:mb-9 flex flex-col gap-2.5 sm:flex-row sm:items-end sm:justify-between border-b pb-4" style="border-color: var(--border-hairline);">
+<div>
+<p class="text-[11px] font-semibold uppercase tracking-[0.24em]" style="color: var(--accent-gold);">
+Official Invitation · ${escapeHtml(CONFIG.COUPLE.weddingDate)}
+</p>
+<h2
+id="heading-invitation-card"
+class="mt-1 font-serif text-3xl sm:text-4xl font-medium tracking-tight"
+style="color: var(--text-primary);"
+>
+${escapeHtml(card.title || "Wedding Invitation Card")}
+</h2>
+</div>
+<p class="max-w-md text-xs sm:text-sm" style="color: var(--text-secondary);">
+${escapeHtml(card.subtitle || CONFIG.COUPLE.names)}
+</p>
+</div>
+
+<div class="glass-card overflow-hidden rounded-[26px] sm:rounded-[30px]" style="border-color: var(--border-strong);">
+${card.previewImage ? `
+<div class="relative aspect-[16/9] w-full overflow-hidden bg-black/15">
+<img
+src="${escapeHtml(card.previewImage)}"
+alt="${escapeHtml(card.title || "Wedding Invitation Card")}"
+data-title="${escapeHtml(card.title || "Wedding Invitation Card")}"
+class="h-full w-full object-cover"
+onerror="handleGalleryImgError(this)"
+/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/15 to-transparent"></div>
+<div class="absolute inset-x-0 bottom-0 p-5 sm:p-8 text-white">
+<p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#E3BC8B]">
+${escapeHtml(card.subtitle || "")}
+</p>
+<h3 class="mt-1 font-serif italic text-2xl sm:text-4xl font-medium">
+${escapeHtml(CONFIG.COUPLE.names)}
+</h3>
+</div>
+</div>
+` : ""}
+
+<div class="flex flex-col items-center justify-between gap-5 p-6 sm:flex-row sm:p-8">
+<p class="max-w-lg text-center sm:text-left text-sm sm:text-[15px] leading-relaxed" style="color: var(--text-secondary);">
+${escapeHtml(card.caption || "Tap below to view the official wedding invitation card.")}
+</p>
+
+<a
+href="${escapeHtml(cardUrl)}"
+target="_blank"
+rel="noopener noreferrer"
+class="inline-flex min-h-[48px] shrink-0 items-center justify-center gap-2 rounded-full px-6 text-sm font-medium shadow-md transition-all duration-200 hover:scale-[1.03] active:scale-95"
+style="background: linear-gradient(135deg, var(--accent-rose), var(--accent-gold)); color: #FFFFFF;"
+>
+<span>Open Invitation Card</span>
+<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+<path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+</svg>
+</a>
+</div>
+</div>
+</section>
+`;
+}
+
+/* =========================================================================
+MODAL DOM REFERENCES
+========================================================================= */
+
+// Photo Lightbox Elements
+const photoLightboxModal = document.getElementById("photoLightboxModal");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxCounter = document.getElementById("lightboxCounter");
+const lightboxAlbumBadge = document.getElementById("lightboxAlbumBadge");
+const lightboxTitle = document.getElementById("lightboxTitle");
+const lightboxCaption = document.getElementById("lightboxCaption");
+
+// Cinema Modal Elements
+const cinemaModal = document.getElementById("cinemaModal");
+const cinemaIframe = document.getElementById("cinemaIframe");
+const modalIndexBadge = document.getElementById("modalIndexBadge");
+const modalSectionBadge = document.getElementById("modalSectionBadge");
+const modalTitle = document.getElementById("modalTitle");
+const modalSubtitle = document.getElementById("modalSubtitle");
+const modalCaption = document.getElementById("modalCaption");
+const modalYoutubeLink = document.getElementById("modalYoutubeLink");
+const modalPrevTitle = document.getElementById("modalPrevTitle");
+const modalNextTitle = document.getElementById("modalNextTitle");
+
+// Passcode Modal Elements
+const passcodeModal = document.getElementById("passcodeModal");
+const passcodePanel = document.getElementById("passcodePanel");
+const passcodeForm = document.getElementById("passcodeForm");
+const passcodeInput = document.getElementById("passcodeInput");
+const passcodeError = document.getElementById("passcodeError");
+const passcodeEyeBtn = document.getElementById("passcodeEyeBtn");
+const passcodeEyebrow = document.getElementById("passcodeEyebrow");
+const passcodeTitle = document.getElementById("passcodeTitle");
+const passcodeDescription = document.getElementById("passcodeDescription");
+const passcodeSubmitBtn = document.getElementById("passcodeSubmitBtn");
+
+/* =========================================================================
+APPLE PHOTOS-STYLE FULLSCREEN PHOTO LIGHTBOX
+========================================================================= */
+
+function getActiveGalleryPhotos() {
+return lightboxAlbum === "private"
+? CONFIG.ENGAGEMENT_GALLERY.privatePhotos
+: CONFIG.ENGAGEMENT_GALLERY.publicPhotos;
+}
+
+function openPhotoLightbox(album, index) {
+if (album === "private" && !engagementUnlocked) {
+openPasscodeModal("engagement", index);
+return;
+}
+
+lightboxAlbum = album;
+const photos = getActiveGalleryPhotos();
+if (!photos || index < 0 || index >= photos.length) return;
+
+lightboxIndex = index;
+const photo = photos[index];
+
+lightboxCounter.textContent = `${index + 1} / ${photos.length}`;
+lightboxAlbumBadge.textContent =
+album === "private"
+? `Family Photos · ${CONFIG.COUPLE.engagementDate}`
+: `Engagement Gallery · ${CONFIG.COUPLE.engagementDate}`;
+lightboxTitle.textContent = photo.title;
+lightboxCaption.textContent = photo.caption;
+
+delete lightboxImage.dataset.fallbackDone;
+lightboxImage.dataset.title = photo.title;
+lightboxImage.src = photo.src;
+lightboxImage.alt = photo.title;
+lightboxImage.onerror = () => handleGalleryImgError(lightboxImage);
+
+photoLightboxModal.classList.add("open");
+photoLightboxModal.setAttribute("aria-hidden", "false");
+document.body.style.overflow = "hidden";
+}
+
+function closePhotoLightbox() {
+photoLightboxModal.classList.remove("open");
+photoLightboxModal.setAttribute("aria-hidden", "true");
+if (!cinemaModal.classList.contains("open") && !passcodeModal.classList.contains("open")) {
+document.body.style.overflow = "";
+}
+}
+
+function stepPhotoLightbox(delta) {
+const photos = getActiveGalleryPhotos();
+if (!photos.length || lightboxIndex < 0) return;
+const nextIdx = (lightboxIndex + delta + photos.length) % photos.length;
+openPhotoLightbox(lightboxAlbum, nextIdx);
+}
+
+/* =========================================================================
+PASSCODE MODAL LOGIC (Ceremony: 31112024 | Engagement: 19052024)
+========================================================================= */
+
+/**
+* Normalizes user-entered passcodes across all browsers, mobile keyboards,
+* and copy-paste edge cases (converts localized Unicode digits to ASCII 0-9
+* and strips spaces, slashes, dashes, dots, and invisible characters).
+*/
+function normalizePasscode(raw) {
+if (raw === null || raw === undefined) return "";
+const asciiDigits = String(raw)
+.replace(/[\u0660-\u0669]/g, ch => String(ch.charCodeAt(0) - 0x0660)) // Arabic-Indic
+.replace(/[\u06F0-\u06F9]/g, ch => String(ch.charCodeAt(0) - 0x06F0)) // Extended Arabic-Indic
+.replace(/[\u0966-\u096F]/g, ch => String(ch.charCodeAt(0) - 0x0966)) // Devanagari
+.replace(/[\u0AE6-\u0AEF]/g, ch => String(ch.charCodeAt(0) - 0x0AE6)) // Gujarati
+.replace(/[\uFF10-\uFF19]/g, ch => String(ch.charCodeAt(0) - 0xFF10)); // Full-width
+return asciiDigits.replace(/[\s/.\-\u200B-\u200D\uFEFF]/g, "").trim();
+}
+
+function openPasscodeModal(mode, targetIndex = -1) {
+activePasscodeMode = mode;
+if (mode === "engagement") {
+pendingEngagementPhotoIndex = targetIndex;
+pendingCeremonyIndex = -1;
+passcodeEyebrow.textContent = "Engagement Family Access";
+passcodeTitle.textContent = "Family Photos";
+passcodeDescription.textContent = "Enter passcode";
+passcodeInput.placeholder = "....";
+passcodeSubmitBtn.textContent = "Unlock Family Photos";
+} else {
+pendingCeremonyIndex = targetIndex;
+pendingEngagementPhotoIndex = -1;
+passcodeEyebrow.textContent = "Family Access";
+passcodeTitle.textContent = "Private Ceremony Film";
+passcodeDescription.textContent = "Enter the ceremony passcode to watch this chapter.";
+passcodeInput.placeholder = "Enter passcode";
+passcodeSubmitBtn.textContent = "Unlock Ceremony";
+}
+
+passcodeInput.value = "";
+passcodeInput.type = "password";
+passcodeError.textContent = "";
+passcodeEyeBtn.setAttribute("aria-label", "Show passcode");
+
+passcodeModal.classList.add("open");
+passcodeModal.setAttribute("aria-hidden", "false");
+document.body.style.overflow = "hidden";
+
+setTimeout(() => {
+try {
+passcodeInput.focus({ preventScroll: true });
+} catch (err) {
+passcodeInput.focus();
+}
+}, 120);
+}
+
+function closePasscodeModal() {
+passcodeModal.classList.remove("open");
+passcodeModal.setAttribute("aria-hidden", "true");
+pendingCeremonyIndex = -1;
+pendingEngagementPhotoIndex = -1;
+if (!cinemaModal.classList.contains("open") && !photoLightboxModal.classList.contains("open")) {
+document.body.style.overflow = "";
+}
+}
+
+function handlePasscodeSubmit(e) {
+if (e && typeof e.preventDefault === "function") e.preventDefault();
+const entered = normalizePasscode(passcodeInput.value);
+const expectedEngagement = normalizePasscode(CONFIG.ENGAGEMENT_PASSWORD);
+const expectedCeremony = normalizePasscode(CONFIG.CEREMONY_PASSWORD);
+
+if (activePasscodeMode === "engagement") {
+if (entered && entered === expectedEngagement) {
+engagementUnlocked = true;
+
+const targetPhoto = pendingEngagementPhotoIndex;
+passcodeInput.blur();
+closePasscodeModal();
+renderEngagementGallery();
+showToast("Family Photos unlocked ✨");
+
+if (targetPhoto >= 0) {
+openPhotoLightbox("private", targetPhoto);
+}
+return;
+}
+} else {
+if (entered && entered === expectedCeremony) {
+ceremonyUnlocked = true;
+
+const targetToPlay = pendingCeremonyIndex;
+passcodeInput.blur();
+closePasscodeModal();
+renderSections();
+showToast("Ceremony chapters unlocked ✨");
+
+if (targetToPlay >= 0) {
+openCinemaModal(targetToPlay);
+}
+return;
+}
+}
+
+passcodeError.textContent = "Incorrect passcode. Please try again.";
+passcodePanel.classList.remove("passcode-shake");
+void passcodePanel.offsetWidth;
+passcodePanel.classList.add("passcode-shake");
+passcodeInput.focus();
+try {
+passcodeInput.select();
+} catch (err) {
+// Ignore select() restrictions in some mobile browsers
+}
+}
+
+/* =========================================================================
+APPLE TV+ CINEMA MODAL PLAYER
+========================================================================= */
+
+function openCinemaModal(index) {
+if (index < 0 || index >= normalizedVideos.length) return;
+
+const video = normalizedVideos[index];
+
+// Strictly block Ceremony videos if still locked (never load iframe or YouTube URL)
+if (isCeremonyVideo(video) && !ceremonyUnlocked) {
+cinemaIframe.src = "";
+modalYoutubeLink.href = "#";
+if (cinemaModal.classList.contains("open")) {
+closeCinemaModal();
+}
+openPasscodeModal("ceremony", index);
+return;
+}
+
+currentModalIndex = index;
+const total = normalizedVideos.length;
+const prevIdx = (index - 1 + total) % total;
+const nextIdx = (index + 1) % total;
+
+modalIndexBadge.textContent = `${String(index + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}`;
+modalSectionBadge.textContent = video.sectionLabel;
+modalTitle.textContent = video.title;
+modalSubtitle.textContent = video.subtitle;
+modalCaption.textContent = video.caption;
+modalYoutubeLink.href = video.watchUrl;
+modalPrevTitle.textContent = normalizedVideos[prevIdx].title;
+modalNextTitle.textContent = normalizedVideos[nextIdx].title;
+
+cinemaIframe.src = `https://www.youtube-nocookie.com/embed/${video.videoId}?autoplay=1&rel=0&modestbranding=1`;
+
+cinemaModal.classList.add("open");
+cinemaModal.setAttribute("aria-hidden", "false");
+document.body.style.overflow = "hidden";
+
+markVideoWatched(video.videoId);
+}
+
+function closeCinemaModal() {
+cinemaModal.classList.remove("open");
+cinemaModal.setAttribute("aria-hidden", "true");
+cinemaIframe.src = "";
+if (!photoLightboxModal.classList.contains("open") && !passcodeModal.classList.contains("open")) {
+document.body.style.overflow = "";
+}
+}
+
+function stepCinemaModal(delta) {
+if (currentModalIndex < 0) return;
+const total = normalizedVideos.length;
+const targetIdx = (currentModalIndex + delta + total) % total;
+openCinemaModal(targetIdx);
+}
+
+/* =========================================================================
+INITIALIZATION & EVENT LISTENERS
+========================================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+// Restore saved theme (default Romantic Ivory light mode)
+const savedTheme = storage.get("ma_wedding_theme_v2", "light");
+applyTheme(savedTheme === "dark");
+
+// Render dynamic UI
+renderCoupleDates();
+initAnniversaryList();
+updateLoveUI();
+updateWatchedProgressUI();
+renderHeroTheater();
+renderFilterPills();
+renderSections();
+renderEngagementGallery();
+renderInvitationCard();
+
+// Theme toggle
+document.getElementById("themeToggleBtn").addEventListener("click", () => {
+const isCurrentlyDark = document.documentElement.classList.contains("dark");
+applyTheme(!isCurrentlyDark);
+});
+
+// Navbar Engagement Gallery quick jump
+const navGalleryLink = document.getElementById("navGalleryLink");
+if (navGalleryLink) {
+navGalleryLink.addEventListener("click", () => {
+if (activeFilter !== "all" && activeFilter !== "engagement-gallery") {
+activeFilter = "engagement-gallery";
+renderFilterPills();
+renderSections();
+renderEngagementGallery();
+renderInvitationCard();
+}
+});
+}
+
+// Hero Watch Premiere button
+document.getElementById("heroWatchBtn").addEventListener("click", () => {
+openCinemaModal(0);
+});
+
+// Blessing buttons & wish chips
+document.getElementById("navLoveBtn").addEventListener("click", e => {
+triggerBlessing(e, "Love sent to Monika & Avadh ❤️");
+});
+
+document.getElementById("footerBlessingBtn").addEventListener("click", e => {
+triggerBlessing(e, "Thank you for your warm blessing ❤️");
+});
+
+document.querySelectorAll(".wish-chip").forEach(chip => {
+chip.addEventListener("click", e => {
+const wish = chip.getAttribute("data-wish") || "Blessing sent ❤️";
+triggerBlessing(e, `Sent: “${wish}”`);
+});
+});
+
+// Delegated clicks for Hero Theater Card + All Film Cards + Engagement Gallery + Filter Pills
+document.addEventListener("click", e => {
+const lockCeremonyBtn = e.target.closest("#lockCeremonyBtn");
+if (lockCeremonyBtn) {
+ceremonyUnlocked = false;
+if (cinemaModal.classList.contains("open") && isCeremonyVideo(normalizedVideos[currentModalIndex])) {
+closeCinemaModal();
+}
+renderSections();
+showToast("Ceremony chapters locked 🔒");
+return;
+}
+
+const unlockEngBtn = e.target.closest("#unlockEngagementBtn");
+if (unlockEngBtn) {
+openPasscodeModal("engagement", -1);
+return;
+}
+
+const photoCard = e.target.closest("[data-photo-album]");
+if (photoCard) {
+const album = photoCard.getAttribute("data-photo-album");
+const idx = Number(photoCard.getAttribute("data-photo-index"));
+if (!Number.isNaN(idx)) openPhotoLightbox(album, idx);
+return;
+}
+
+const card = e.target.closest("[data-open-index]");
+if (card) {
+const idx = Number(card.getAttribute("data-open-index"));
+if (!Number.isNaN(idx)) openCinemaModal(idx);
+return;
+}
+
+const pill = e.target.closest("[data-filter-id]");
+if (pill) {
+const selectedFilter = pill.getAttribute("data-filter-id");
+if (
+selectedFilter === "invitation-card" &&
+CONFIG.INVITATION_CARD &&
+CONFIG.INVITATION_CARD.openDirectly &&
+String(CONFIG.INVITATION_CARD.url || "").trim()
+) {
+window.open(CONFIG.INVITATION_CARD.url, "_blank", "noopener,noreferrer");
+return;
+}
+activeFilter = selectedFilter;
+renderFilterPills();
+renderSections();
+renderEngagementGallery();
+renderInvitationCard();
+}
+});
+
+// Keyboard accessibility for film & photo cards (Enter / Space)
+document.addEventListener("keydown", e => {
+if ((e.key === "Enter" || e.key === " ") && document.activeElement?.hasAttribute("data-open-index")) {
+e.preventDefault();
+const idx = Number(document.activeElement.getAttribute("data-open-index"));
+if (!Number.isNaN(idx)) openCinemaModal(idx);
+} else if ((e.key === "Enter" || e.key === " ") && document.activeElement?.hasAttribute("data-photo-album")) {
+e.preventDefault();
+const album = document.activeElement.getAttribute("data-photo-album");
+const idx = Number(document.activeElement.getAttribute("data-photo-index"));
+if (!Number.isNaN(idx)) openPhotoLightbox(album, idx);
+}
+});
+
+// Photo Lightbox Controls
+document.getElementById("lightboxCloseBtn").addEventListener("click", closePhotoLightbox);
+document.getElementById("lightboxPrevBtn").addEventListener("click", () => stepPhotoLightbox(-1));
+document.getElementById("lightboxNextBtn").addEventListener("click", () => stepPhotoLightbox(1));
+document.getElementById("lightboxLoveBtn").addEventListener("click", e => {
+triggerBlessing(e, "Love sent to Monika & Avadh ❤️");
+});
+photoLightboxModal.addEventListener("click", e => {
+if (e.target === photoLightboxModal) closePhotoLightbox();
+});
+
+// Cinema Modal Controls
+document.getElementById("modalCloseBtn").addEventListener("click", closeCinemaModal);
+document.getElementById("modalPrevBtn").addEventListener("click", () => stepCinemaModal(-1));
+document.getElementById("modalNextBtn").addEventListener("click", () => stepCinemaModal(1));
+document.getElementById("modalLoveBtn").addEventListener("click", e => {
+triggerBlessing(e, "Love sent to Monika & Avadh ❤️");
+});
+cinemaModal.addEventListener("click", e => {
+if (e.target === cinemaModal) closeCinemaModal();
+});
+
+// Passcode Modal Controls
+document.getElementById("passcodeCloseBtn").addEventListener("click", closePasscodeModal);
+passcodeForm.addEventListener("submit", handlePasscodeSubmit);
+passcodeInput.addEventListener("input", () => {
+if (passcodeError.textContent) passcodeError.textContent = "";
+});
+passcodeInput.addEventListener("keydown", e => {
+if (e.key === "Enter" || e.keyCode === 13) {
+handlePasscodeSubmit(e);
+}
+});
+passcodeEyeBtn.addEventListener("click", () => {
+const isPassword = passcodeInput.type === "password";
+passcodeInput.type = isPassword ? "text" : "password";
+passcodeEyeBtn.setAttribute("aria-label", isPassword ? "Hide passcode" : "Show passcode");
+});
+passcodeModal.addEventListener("click", e => {
+if (e.target === passcodeModal) closePasscodeModal();
+});
+
+// Global Keyboard Shortcuts for Modals
+document.addEventListener("keydown", e => {
+if (passcodeModal.classList.contains("open")) {
+if (e.key === "Escape") closePasscodeModal();
+return;
+}
+if (photoLightboxModal.classList.contains("open")) {
+if (e.key === "Escape") {
+closePhotoLightbox();
+} else if (e.key === "ArrowLeft") {
+stepPhotoLightbox(-1);
+} else if (e.key === "ArrowRight") {
+stepPhotoLightbox(1);
+}
+return;
+}
+if (!cinemaModal.classList.contains("open")) return;
+if (e.key === "Escape") {
+closeCinemaModal();
+} else if (e.key === "ArrowLeft") {
+stepCinemaModal(-1);
+} else if (e.key === "ArrowRight") {
+stepCinemaModal(1);
+}
+});
+});
+</script>
+</body>
+</html>
